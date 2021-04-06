@@ -1,7 +1,7 @@
 package com.time.trangecino.Data.Domain;
 
 
-
+//Written by Nico
 public abstract class User {
 
 
