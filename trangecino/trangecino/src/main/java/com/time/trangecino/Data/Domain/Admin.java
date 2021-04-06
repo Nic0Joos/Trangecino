@@ -3,10 +3,5 @@ package com.time.trangecino.Data.Domain;
 //written by Lennart
 public class Admin extends User{
 
-   public class createProfile {
-   }
-
-   public class editProfile {
-   }
 
 }
