@@ -3,22 +3,18 @@ package com.time.trangecino.Data.Domain;
 //written by Luca
 public class Employee extends User {
 
-    public class clockTime() {
+    public clockTime() {
     }
 
-    public class editTime() {
+    public editTime() {
     }
 
-    public class deleteTime() {
+    public deleteTime() {
     }
 
-    public class viewTime (){
+    public viewTime (){
     }
 
-    public class addHoliday() {
+    public addHoliday() {
     }
-
-    public int getTime () {return clockTime
-    }
-
 }
