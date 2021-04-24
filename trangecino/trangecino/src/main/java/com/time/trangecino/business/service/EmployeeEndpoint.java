@@ -18,8 +18,5 @@ public class EmployeeEndpoint {
         this.employeeService = employeeService;
     }
 
-    @PostMapping("/clockTime")
-    public String ClockTime(){
-        return //weissi nonig - nico fragen
     }
 }

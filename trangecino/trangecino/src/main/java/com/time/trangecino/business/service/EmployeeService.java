@@ -1,24 +1,30 @@
 package com.time.trangecino.business.service;
 
+import com.time.trangecino.Data.Domain.Employee;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 //Written by Luca
 @Service
 public class EmployeeService {
 
 
-    public void clockTime () {
+    //add Employee
+    public Employee addEmployee (){
+
     }
 
-    public void editTime () {
+    //edit Employee
+public Employee editEmployee(@Validated Employee employee) throws Exception {
+    if (employee.getID() == null) {
+        }
+        throw new Exception("No employee found");
     }
 
-    public void deleteTime () {
-    }
-
-    public void viewTime () {
-    }
-
-    public void addHoliday () {
+    //delete Employee
+    public void deleteEmployee (int ID) throws Exception {
+            if (deleteEmployee().getID() == null) {
+            }
+            throw new Exception("No employee found");
     }
 }
