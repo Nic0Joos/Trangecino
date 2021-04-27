@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 //Written by Alex
 
-@Service ervice
+@Service
 public class HRService {
 	
 	public String createOverview() {
