@@ -16,14 +16,14 @@ public class EmployeeService {
 
     //edit Employee
 public Employee editEmployee(@Validated Employee employee) throws Exception {
-    if (employee.getID() == null) {
+    if (Employee.getID() == null) {
         }
         throw new Exception("No employee found");
     }
 
     //delete Employee
-    public void deleteEmployee (int ID) throws Exception {
-            if (deleteEmployee().getID() == null) {
+    public void deleteEmployee (Employee employee) throws Exception {
+            if (Employee.getID() == null) {
             }
             throw new Exception("No employee found");
     }

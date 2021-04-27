@@ -11,7 +11,7 @@ public abstract class User {
     private String name;
     private String familyname;
 
-    public int getID() { return ID; }
+    public static int getID() { return ID; }
 
     public void setID(int ID) {
         this.ID = ID;
