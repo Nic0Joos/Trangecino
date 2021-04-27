@@ -10,7 +10,7 @@ public class EmployeeService {
 
 
     //add Employee
-    public Employee addEmployee (){
+    public Employee addEmployee (Employee employee){
 
     }
 
