@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
+
+ //Written by Alex
 public interface HRRepository extends JpaRepository <HR,Long>{
 
     @Query("select u from HRAdminEntity u where current_date >=u.startDate and current_date <=u.endDate and u.employeeEntity =:employee")
