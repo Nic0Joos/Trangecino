@@ -11,6 +11,7 @@
 	<groupId>com.time</groupId>
 	<artifactId>trangecino</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>trangecino</name>
 	<description>Student project</description>
 	<properties>
