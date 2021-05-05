@@ -1,15 +1,14 @@
 package com.time.trangecino.business.service;
 
-import java.sql.Time;
-import java.time.DayOfWeek;
-import java.util.Date;
-
 import com.time.trangecino.Data.Domain.HR;
-import com.time.trangecino.Data.Domain.WorkSchedule;
+import com.time.trangecino.Data.Domain.User;
+import com.time.trangecino.Exceptions.CustomMessageWithId;
 import com.time.trangecino.Repository.EmployeeRepository;
 import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 //Written by Alex
@@ -24,6 +23,7 @@ public class HRService {
 	EmployeeRepository employeeRepository;
 
 
+
 	public String createOverview(){
 		return null;
 	}
@@ -35,7 +35,5 @@ public class HRService {
 	public void createWorkschedule () {
 	     
 	}
-	
 
-	
 }
