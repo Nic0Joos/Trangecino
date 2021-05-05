@@ -5,9 +5,9 @@ import java.time.DayOfWeek;
 
 //written by Kaan
 public class WorkScheduleService {
-
+/*
     enum DaysOfWeek {
-   //days of the week and the values which I gave them
+   days of the week and the values which I gave them
       MONDAY(1) {
           public DayOfWeek next() { return MONDAY; }
    }, TUESDAY(2) {
@@ -22,4 +22,6 @@ public class WorkScheduleService {
             public DayOfWeek next() { return SATURDAY; }
    }, SUNDAY(7) {
             public DayOfWeek next() { return SUNDAY; }
-      }}}
+
+    }}*/
+      }
