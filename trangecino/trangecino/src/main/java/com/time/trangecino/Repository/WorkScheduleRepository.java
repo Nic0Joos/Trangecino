@@ -1,4 +1,10 @@
 package com.time.trangecino.Repository;
 
-public interface WorkScheduleRepository {
+import org.springframework.stereotype.Repository;
+
+
+//written by Kaan
+@Repository
+public interface WorkScheduleRepository extends JpaRepository {
+
 }
