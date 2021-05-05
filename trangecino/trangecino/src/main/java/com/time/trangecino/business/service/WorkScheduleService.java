@@ -1,25 +1,32 @@
 package com.time.trangecino.business.service;
 
 
-import java.time.DayOfWeek;
+import com.time.trangecino.Data.Domain.WorkSchedule;
 
 //written by Kaan
-public class WorkScheduleService {
+public class  WorkScheduleService {
 
-    enum DaysOfWeek {
+
+
+
+enum DaysOfWeek {
    //days of the week and the values which I gave them
       MONDAY(1) {
-          public DayOfWeek next() { return MONDAY; }
+          public DaysOfWeek next() { return MONDAY; }
    }, TUESDAY(2) {
-          public DayOfWeek next() { return TUESDAY; }
+          public DaysOfWeek next() { return TUESDAY; }
    }, WEDNESDAY(3) {
-          public DayOfWeek next() { return WEDNESDAY; }
+          public DaysOfWeek next() { return WEDNESDAY; }
    }, THURSDAY(4) {
-          public DayOfWeek next() { return THURSDAY; }
+          public DaysOfWeek next() { return THURSDAY; }
    }, FRIDAY(5) {
-          public DayOfWeek next() { return FRIDAY; }
+          public DaysOfWeek next() { return FRIDAY; }
    }, SATURDAY(6) {
-            public DayOfWeek next() { return SATURDAY; }
+            public DaysOfWeek next() { return SATURDAY; }
    }, SUNDAY(7) {
-            public DayOfWeek next() { return SUNDAY; }
-      }}}
+            public DaysOfWeek next() { return SUNDAY; }
+      };
+
+        DaysOfWeek(int i) {
+        }
+    }}
