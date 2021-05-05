@@ -22,23 +22,23 @@ public int getID(){ return ID; };
 public void setID(int ID)  {this.ID = ID;}
 
 //getter and setter for date
-public String getdate() {return date;}
+public Date getdate() {return date;}
 public void setDate(Date date) {this.date = date;}
 
 //getter and setter for holiday
-public String getHoliday() {return Holiday;}
+public boolean getHoliday() {return Holiday;}
 public void setHoliday(Boolean Holiday) {this.Holiday = Holiday;}
 
 //getter and setter for StartMorning
-public String getStartMorning() {return StartMorning;}
+public Time getStartMorning() {return StartMorning;}
 public void setStartMorning(Time StartMorning) {this.StartMorning = StartMorning;}
 
 //getter and setter for Lunch
-public String getLunch() {return Lunch;}
+public Time getLunch() {return Lunch;}
 public void setLunch(Time Lunch) {this.Lunch = Lunch;}
 
 //getter and setter for StartAfternoon
-public String getStartAfternoon() {return StartAfternoon;}
+public Time getStartAfternoon() {return StartAfternoon;}
 public void setStartAfternoon(Time StartAfternoon) {this.StartAfternoon = StartAfternoon;}
 
 //getter and setter for EndDay
