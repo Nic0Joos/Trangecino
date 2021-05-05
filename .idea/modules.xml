@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Trangecino.iml" filepath="$PROJECT_DIR$/.idea/Trangecino.iml" />
-      <module fileurl="file://$PROJECT_DIR$/trangecino/trangecino/trangecino.iml" filepath="$PROJECT_DIR$/trangecino/trangecino/trangecino.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trangecino.iml" filepath="$PROJECT_DIR$/trangecino.iml" />
     </modules>
   </component>
 </project>
