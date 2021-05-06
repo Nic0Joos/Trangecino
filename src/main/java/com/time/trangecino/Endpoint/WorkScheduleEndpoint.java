@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path= "/WorkSchedule")
 public class WorkScheduleEndpoint {
 
-    private WorkScheduleEndpoint workSAPI;
+    private WorkScheduleEndpoint workschedule;
 
     @Autowired
-    public WorkScheduleEndpoint(AdminEndpoint adminEndpoint) {
-        this.workSAPI = workSAPI;
+    public WorkScheduleEndpoint(WorkScheduleEndpoint workschedule) {
+        this.workschedule = workschedule;
     }
 
 }
