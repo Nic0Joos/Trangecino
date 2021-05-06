@@ -25,12 +25,20 @@ public class EmployeeEndpoint {
 
     @PutMapping
     public void editEmployee(Employee employee){
-        employeeService.editEmployee(employee);
+        try {
+            employeeService.editEmployee(employee);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @DeleteMapping
     public void deleteEmployee(Employee employee){
-        employeeService.deleteEmployee(employee);
+        try {
+            employeeService.deleteEmployee(employee);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     }

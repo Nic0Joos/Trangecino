@@ -10,7 +10,7 @@ public class EmployeeService {
 
 
     //add Employee
-    public Employee addEmployee (Employee employee){
+    public void addEmployee (Employee employee){
 
     }
 
@@ -23,7 +23,7 @@ public Employee editEmployee(@Validated Employee employee) throws Exception {
 
     //delete Employee
     public void deleteEmployee (Employee employee) throws Exception {
-            if (Employee.getID() == null) {
+            if (employee.getID() == 0) {
             }
             throw new Exception("No employee found");
     }
