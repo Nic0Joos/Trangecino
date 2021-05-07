@@ -1,5 +1,6 @@
 package com.time.trangecino.Exceptions;
 
+// Written by Alex
 public class CustomMessageWithId {
 
     private String message;
