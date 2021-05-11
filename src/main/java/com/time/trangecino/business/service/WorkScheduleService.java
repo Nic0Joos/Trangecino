@@ -6,12 +6,13 @@ public class WorkScheduleService {
 
       private WorkingDaysStatus status;
 
-public enum WorkingDaysStatus {
+
+      public enum WorkingDaysStatus {
   // possible workdays
       WORKDAY,
       HOLIDAY,
       INJURY;
-}
+}}
 
  /*public boolean areUWorking() {
       if (getWorkingDaysStatus() == WorkingDaysStatus.WORKDAY) {
