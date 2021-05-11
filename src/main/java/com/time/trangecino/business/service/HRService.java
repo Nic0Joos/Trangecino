@@ -2,7 +2,6 @@ package com.time.trangecino.business.service;
 
 import com.time.trangecino.Data.Domain.HR;
 import com.time.trangecino.Data.Domain.User;
-import com.time.trangecino.Exceptions.CustomMessageWithId;
 import com.time.trangecino.Repository.EmployeeRepository;
 import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.BeanUtils;

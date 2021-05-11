@@ -1,7 +1,6 @@
 package com.time.trangecino.Controller;
 
 import com.time.trangecino.Data.Domain.HR;
-import com.time.trangecino.Exceptions.CustomMessageWithId;
 import com.time.trangecino.business.service.HRService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
