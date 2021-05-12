@@ -91,7 +91,7 @@
 
     <script language="JavaScript">
         $(document).ready(function () {
-           $(#saveBtn).submit(function (event) {
+           $(#saveBtn).click(function (event) {
                PostEmployee($('input[surname=surname]').val(), $('input[email=email]').val(), $('input[password=password]').val(),
                         $('input[familyname=familyname]').val(), $('input[department=department]').val(),
                         });
