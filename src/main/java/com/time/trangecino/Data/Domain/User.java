@@ -1,23 +1,35 @@
 package com.time.trangecino.Data.Domain;
 
 
+import com.sun.istack.internal.NotNull;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.Email;
+
 //Written by Nico
+@Entity
 public abstract class User {
 
-
-    private Long ID;
+    @Id
+    @GeneratedValue
+    private long ID;
+    @Email
     private String email;
     private String password;
     private String name;
     private String familyname;
 
-    public Long getID() { return ID; }
+    public long getID() { return ID; }
 
-    public void setID(Long ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 
-    public String getEmail() { return email; }
+    public String getEmail() {
+        return email;
+    }
 
     public void setEmail(String email) {
         this.email = email;
