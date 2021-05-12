@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/HR")
 public class HRController {
 
-    @Autowired
+   /* @Autowired
    private HRService hrService;
 
-   /* @GetMapping
+    @GetMapping
     public String getHRView(Model model) {
         try {
             if (HRService.getCurrentHRUser().isHR())
