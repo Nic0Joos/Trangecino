@@ -5,13 +5,16 @@ import com.time.trangecino.Data.Domain.HR;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 
  //Written by Alex
-public interface HRRepository extends JpaRepository <HR,Long>{
+@Repository
+public interface HRRepository extends JpaRepository<HR, Long> {
 
-    @Query("select u from HRAdminEntity u where current_date >=u.startDate and current_date <=u.endDate and u.employeeEntity =:employee")
-    Optional<HR> findByEmployee(@Param("employee") Employee employee);
+     HR findByEmail(String email);
+    //@Query("select u from HR u where current_date >=u.startDate and current_date <=u.endDate and u.Employee =:employee")
+    //Optional<HR> findByEmployee(@Param("employee") Employee employee);
 }

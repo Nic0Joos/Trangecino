@@ -1,6 +1,8 @@
 package com.time.trangecino.business.service;
 
 import com.time.trangecino.Data.Domain.Employee;
+import com.time.trangecino.Repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -8,6 +10,8 @@ import org.springframework.validation.annotation.Validated;
 @Service
 public class EmployeeService {
 
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     //add Employee
     public void addEmployee (Employee employee){
