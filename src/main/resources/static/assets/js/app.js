@@ -16,4 +16,23 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
 
         });
-    }
+    };
+
+    function PostEmployee(surname, email, password, familyname, department){
+            $.ajax({
+            type: "POST",
+            url: serviceEndpointURL + "/employee",
+            data: JSON.stringify({
+                "surname": surname,
+                "email": email,
+                "password": password,
+                "familyname": familyname,
+                "department": department,
+            }),
+
+
+            });
+    };
+
+
+
