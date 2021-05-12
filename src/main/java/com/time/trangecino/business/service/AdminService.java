@@ -17,7 +17,7 @@ public class AdminService {
     AdminRepository adminRepository;
 
     public void registerAdmin(@Validated Admin admin) throws Exception {
-        if (admin.getID() == 0) {
+        if (admin.getID() == null) {
             if (adminRepository.findbyEmail(admin.getEmail()) != null) ;
 
             throw new Exception("Email address " + admin.getEmail() + "already assigned to another Admin.");
