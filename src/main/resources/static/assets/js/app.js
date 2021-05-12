@@ -34,5 +34,20 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             });
     };
 
+    function PostHR(surname, email, password, familyname, department){
+                $.ajax({
+                type: "POST",
+                url: serviceEndpointURL + "/HR",
+                data: JSON.stringify({
+                    "surname": surname,
+                    "email": email,
+                    "password": password,
+                    "familyname": familyname,
+                    "department": department,
+                }),
+
+
+                });
+        };
 
 
