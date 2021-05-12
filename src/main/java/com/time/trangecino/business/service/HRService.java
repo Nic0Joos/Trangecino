@@ -18,9 +18,6 @@ public class HRService {
 	@Autowired
 	HRRepository HR;
 
-	@Autowired
-	EmployeeRepository employeeRepository;
-
 	public String getCurrentHRUser() {
 		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		return User.getEmail();
