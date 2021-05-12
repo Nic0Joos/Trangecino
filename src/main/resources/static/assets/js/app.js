@@ -13,7 +13,9 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             "surname": surname,
             "familyname": familyname,
         }),
+        //success
 
+        //error
 
         });
     };
@@ -30,24 +32,30 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
                 "department": department,
             }),
 
+            //success
+
+            //error
 
             });
     };
 
     function PostHR(surname, email, password, familyname, department){
-                $.ajax({
-                type: "POST",
-                url: serviceEndpointURL + "/HR",
-                data: JSON.stringify({
+            $.ajax({
+            type: "POST",
+            url: serviceEndpointURL + "/HR",
+            data: JSON.stringify({
                     "surname": surname,
                     "email": email,
                     "password": password,
                     "familyname": familyname,
                     "department": department,
-                }),
+            }),
 
+            //success
 
-                });
-        };
+            //error
+
+            });
+    };
 
 

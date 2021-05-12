@@ -1,11 +1,21 @@
 package com.time.trangecino.Data.Domain;
 
 
+import com.sun.istack.internal.NotNull;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.Email;
+
 //Written by Nico
+@Entity
 public abstract class User {
 
-
+    @Id
+    @GeneratedValue
     private int ID;
+    @Email
     private String email;
     private String password;
     private String name;
