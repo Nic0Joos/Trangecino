@@ -5,15 +5,15 @@ package com.time.trangecino.Data.Domain;
 public abstract class User {
 
 
-    private int ID;
+    private Long ID;
     private String email;
     private String password;
     private String name;
     private String familyname;
 
-    public int getID() { return ID; }
+    public Long getID() { return ID; }
 
-    public void setID(int ID) {
+    public void setID(Long ID) {
         this.ID = ID;
     }
 

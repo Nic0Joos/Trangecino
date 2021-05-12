@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 //Luca
 
 @Repository
-public interface EmployeeRepository extends JpaRepository {
-    /*ask Lukas Frey*/
+public interface EmployeeRepository extends JpaRepository <Employee, Long> {
+    Employee findByEmail (String email);
+    Employee findByID (Long ID);
 }
