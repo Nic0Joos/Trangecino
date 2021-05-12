@@ -1,7 +1,6 @@
 package com.time.trangecino.business.service;
 
 import com.time.trangecino.Data.Domain.HR;
-import com.time.trangecino.Data.Domain.User;
 import com.time.trangecino.Repository.EmployeeRepository;
 import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +13,19 @@ import org.springframework.stereotype.Service;
 public class HRService {
 	
 	@Autowired
-	HRRepository hrRepository;
+	HR User;
+
+	@Autowired
+	HRRepository HR;
 
 	@Autowired
 	EmployeeRepository employeeRepository;
 
-	/*public HR getCurrentHRUser() {
+	public String getCurrentHRUser() {
 		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		return HRRepository.findByEmail(email);
+		return User.getEmail();
 	}
-*/
+
 
 	/* public String createOverview(){
 		return null;
