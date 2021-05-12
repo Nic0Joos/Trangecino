@@ -17,10 +17,10 @@ public class EmployeeService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    //add Employee
+    //add and save Employee
     public void addEmployee (Employee employee){
         try {
-            if (employee.getID() == 0) {
+            if (employee.getID() == null) {
                 if (employeeRepository.findByEmail(employee.getEmail()) != null) {
                     throw new Exception("Please enter a new email address");
                 } else {
@@ -44,14 +44,14 @@ public class EmployeeService {
 
     //edit Employee
 public Employee editEmployee(@Validated Employee employee) throws Exception {
-    if (employee.getID() == 0) {
+    if (employee.getID() == null) {
         }
         throw new Exception("No employee found");
     }
 
     //delete Employee
     public void deleteEmployee (Employee employee) throws Exception {
-            if (employee.getID() == 0) {
+            if (employee.getID() == null) {
             }
             throw new Exception("No employee found");
     }
