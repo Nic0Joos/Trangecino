@@ -14,16 +14,16 @@ public abstract class User {
 
     @Id
     @GeneratedValue
-    private int ID;
+    private long ID;
     @Email
     private String email;
     private String password;
     private String name;
     private String familyname;
 
-    public int getID() { return ID; }
+    public long getID() { return ID; }
 
-    public void setID(int ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 
