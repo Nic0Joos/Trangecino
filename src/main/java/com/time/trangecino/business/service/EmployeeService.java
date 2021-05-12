@@ -20,7 +20,7 @@ public class EmployeeService {
     //add Employee
     public void addEmployee (Employee employee){
         try {
-            if (employee.getID() == null) {
+            if (employee.getID() == 0) {
                 if (employeeRepository.findByEmail(employee.getEmail()) != null) {
                     throw new Exception("Please enter a new email address");
                 } else {
