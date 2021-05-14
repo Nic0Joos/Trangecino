@@ -29,7 +29,7 @@ public class HRController {
         }
 */
     }
-    //@PostMapping("addhr")
+    //@PostMapping("Addhr")
 
   //  public ResponseEntity<CustomMessageWithId> addHradmin(@RequestBody HR request) {
     //    return hrService.addHR(request);
