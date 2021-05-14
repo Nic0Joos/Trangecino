@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 //Written by Alex
 
 @RestController
-@RequestMapping(path= "/hr")
+@RequestMapping(path= "/HR")
 public class HREndpoint {
 
     private HRService hrService;
