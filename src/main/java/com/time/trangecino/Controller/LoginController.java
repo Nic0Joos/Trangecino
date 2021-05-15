@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping (path= "/login")
-public class EmployeeController {
+public class LoginController {
 
     @Autowired
     private EmployeeService employeeService;

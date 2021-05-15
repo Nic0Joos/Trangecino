@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-//written by Luca
+//written by Luca Weisskopf
 
 @RestController
 @RequestMapping(path= "/employee")
@@ -18,6 +18,7 @@ public class EmployeeEndpoint {
     public EmployeeEndpoint(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+
 
     //add employee - Endpoint
     @PostMapping(path = "/create")
