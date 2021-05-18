@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 //written by Kaan
+/*
 @Service
+ */
 
 public class WorkScheduleService {
 
