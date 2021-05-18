@@ -14,9 +14,10 @@ import org.springframework.web.server.ResponseStatusException;
 @RequestMapping(path= "/employee")
 public class EmployeeEndpoint {
     private EmployeeService employeeService;
+    private EmployeeEndpoint employeeEndpoint;
     @Autowired
-    public EmployeeEndpoint(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeEndpoint(EmployeeEndpoint employeeEndpoint) {
+        this.employeeEndpoint = employeeEndpoint;
     }
 
 
@@ -46,7 +47,7 @@ public class EmployeeEndpoint {
     @DeleteMapping(path="/delete")
     public ResponseEntity<Void> deleteEmployee(Employee employee){
         try {
-            employeeService.deleteEmployee(employee);
+            employeeService.deleteEmployee(employee.getID());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
