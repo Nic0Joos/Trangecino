@@ -20,11 +20,11 @@ public class HRController {
         this.hrService = hrService;
     }
 
-   /* @PostMapping
+  /*  @PostMapping
     public void registerHR(@RequestBody HR hr) {
-       HRService.registerHR(hr);
-    }*/
-
+      return HRService.registerHR(hr);
+    }
+*/
 }
 
 
