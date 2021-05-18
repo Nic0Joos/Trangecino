@@ -23,7 +23,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
     function PostEmployee(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
-            url: serviceEndpointURL + "/employee",
+            url: serviceEndpointURL + "/employee/create",
             data: JSON.stringify({
                 "surname": surname,
                 "email": email,
@@ -42,7 +42,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
     function PostHR(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
-            url: serviceEndpointURL + "/HR",
+            url: serviceEndpointURL + "/HR/create",
             data: JSON.stringify({
                     "surname": surname,
                     "email": email,
@@ -58,4 +58,19 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             });
     };
 
+     function PostProject(projectname, supervisor, description){
+                $.ajax({
+                type: "POST",
+                url: serviceEndpointURL + "/project/create",
+                data: JSON.stringify({
+                        "projectname": projectname,
+                        "supervisor": supervisor,
+                        "description": description,
+                }),
 
+                //success
+
+                //error
+
+                });
+        };
