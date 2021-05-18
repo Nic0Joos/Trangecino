@@ -16,7 +16,7 @@ public class LoginController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/login")
+    @GetMapping
     public String getLoginView() {
         return "Login.html";
     }

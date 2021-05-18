@@ -7,6 +7,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
+
 //Written by Luca
 @Service
 public class EmployeeService {
@@ -18,41 +20,26 @@ public class EmployeeService {
     private PasswordEncoder passwordEncoder;
 
     //add and save Employee
-    public void addEmployee (Employee employee){
-        try {
+    public void addEmployee (@Valid Employee employee) throws Exception {
             if (employee.getID() == null) {
                 if (employeeRepository.findByEmail(employee.getEmail()) != null) {
                     throw new Exception("Please enter a new email address");
-                } else {
-                    employee.setPassword(passwordEncoder.encode(employee.getPassword()));
                 }
-            } else {
-                employee.setPassword(passwordEncoder.encode(
-                        employeeRepository.findById(employee.getID()).get().getPassword()));
             }
-        } catch (NullPointerException ne) {
-            try {
-                throw new Exception("Not logged in.");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
         employeeRepository.save(employee);
     }
 
     //edit Employee
-public Employee editEmployee(@Validated Employee employee) throws Exception {
+public Employee editEmployee(@Valid Employee employee) throws Exception {
     if (employee.getID() == null) {
         }
         throw new Exception("No employee found");
     }
 
     //delete Employee
-    public void deleteEmployee (Employee employee) throws Exception {
-            if (employee.getID() == null) {
-            }
-            throw new Exception("No employee found");
+    public void deleteEmployee(Employee customerId)
+    {
+        employeeRepository.deleteById(customerId);
     }
 }
