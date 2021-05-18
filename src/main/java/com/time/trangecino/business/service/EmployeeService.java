@@ -20,26 +20,28 @@ public class EmployeeService {
     private PasswordEncoder passwordEncoder;
 
     //add and save Employee
-    public void addEmployee (@Valid Employee employee) throws Exception {
-            if (employee.getID() == null) {
-                if (employeeRepository.findByEmail(employee.getEmail()) != null) {
-                    throw new Exception("Please enter a new email address");
-                }
+    public void addEmployee(@Valid Employee employee) throws Exception {
+        if (employee.getID() == null) {
+            if (employeeRepository.findByEmail(employee.getEmail()) != null) {
+                throw new Exception("Please enter a new email address");
             }
+        }
         employee.setPassword(passwordEncoder.encode(employee.getPassword()));
         employeeRepository.save(employee);
     }
 
     //edit Employee
-public Employee editEmployee(@Valid Employee employee) throws Exception {
-    if (employee.getID() == null) {
+    public Employee editEmployee(@Valid Employee employee) throws Exception {
+        if (employee.getID() == null) {
+            throw new Exception("No employee found");
+        } else {
+            return employeeRepository.save(employee);
         }
-        throw new Exception("No employee found");
     }
 
-    //delete Employee
-    public void deleteEmployee(Employee customerId)
-    {
-        employeeRepository.deleteById(customerId);
-    }
+
+        //delete Employee
+        public void deleteEmployee (Employee customerId){
+            employeeRepository.deleteById(customerId);
+        }
 }
