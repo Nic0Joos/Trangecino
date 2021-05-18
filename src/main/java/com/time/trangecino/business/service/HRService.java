@@ -25,7 +25,7 @@ public class HRService {
 
 
 	@Autowired
-	HRRepository hRRepository;
+	private HRRepository hRRepository;
 
 	public void registerHR(@Validated HR hr) throws Exception {
 		if (hr.getID() == null) {

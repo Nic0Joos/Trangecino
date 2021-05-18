@@ -13,10 +13,25 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/HR")
 public class HRController {
 
-   @Autowired
    private HRService hrService;
 
-  /*  @GetMapping
+   @Autowired
+    public HRController(HRService hrService) {
+        this.hrService = hrService;
+    }
+
+   /* @PostMapping
+    public void registerHR(@RequestBody HR hr) {
+       HRService.registerHR(hr);
+    }*/
+
+}
+
+
+
+
+
+/*  @GetMapping
     public String getHRView(Model model) {
         try {
             if (HRService.getCurrentHRUser().isHR())
@@ -25,12 +40,8 @@ public class HRController {
                 return "dashboard";
         } catch (Exception e) {
             return "login";
-
-        }
-*/
     }
-    //@PostMapping("Addhr")
 
   //  public ResponseEntity<CustomMessageWithId> addHradmin(@RequestBody HR request) {
     //    return hrService.addHR(request);
-    //}
+    //} */

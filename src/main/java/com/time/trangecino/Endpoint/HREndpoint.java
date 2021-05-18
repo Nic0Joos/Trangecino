@@ -18,7 +18,8 @@ public class HREndpoint {
     private HRService hrService;
 
     @Autowired
-    public HREndpoint(HRService hrService) { this.hrService = hrService; }
+    public HREndpoint(HRService hrService) {
+        this.hrService = hrService; }
 
     @PostMapping
     public void postHR(/*@RequestBody?*/ HR hr) {
