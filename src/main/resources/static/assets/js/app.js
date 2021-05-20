@@ -58,14 +58,16 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             });
     };
 
-     function PostProject(projectname, supervisor, description){
+    function PostWorkSchedule(emploee, OutofOfficeSelect, date, projectname){
                 $.ajax({
                 type: "POST",
-                url: serviceEndpointURL + "/project/create",
+                url: serviceEndpointURL + "/workschedule/create",
                 data: JSON.stringify({
+
+                        "emploee": employee,
+                        "OutofOfficeSelect" : OutofOfficeSelect,
+                        "date": date,
                         "projectname": projectname,
-                        "supervisor": supervisor,
-                        "description": description,
                 }),
 
                 //success
@@ -74,3 +76,6 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
                 });
         };
+
+
+
