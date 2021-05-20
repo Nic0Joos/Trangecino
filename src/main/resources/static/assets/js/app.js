@@ -18,7 +18,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
         //error
 
         });
-    };
+    }
 
     function PostEmployee(surname, email, password, familyname, department){
             $.ajax({
@@ -37,7 +37,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             //error
 
             });
-    };
+    }
 
     function PostHR(surname, email, password, familyname, department){
             $.ajax({
@@ -56,7 +56,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             //error
 
             });
-    };
+    }
 
     function PostWorkSchedule(emploee, OutofOfficeSelect, date, projectname){
                 $.ajax({
@@ -75,7 +75,34 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
                 //error
 
                 });
-        };
+        }
 
+
+    function GetEmployees(){
+
+    }
+
+    function GetHR(){
+
+    }
+
+    function login(email, password){
+        $.ajax({
+            type: "POST",
+            url: serviceEndpointURL + "/login",
+            data: JSON.stringify({
+                        "email": email,
+                        "password": password,
+                    }),
+            success: function (data, textStatus, response) {
+                        callback(true);
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR, textStatus, errorThrown);
+                        callback(false);
+                    }
+        });
+    }
 
 
