@@ -15,6 +15,8 @@ public class WorkSchedule {
     private Time Lunch;
     private Time StartAfternoon;
     private Time EndDay;
+    private String Project;
+
 
 
 //getter and setter for ID
@@ -40,6 +42,10 @@ public void setLunch(Time Lunch) {this.Lunch = Lunch;}
 //getter and setter for StartAfternoon
 public Time getStartAfternoon() {return StartAfternoon;}
 public void setStartAfternoon(Time StartAfternoon) {this.StartAfternoon = StartAfternoon;}
+
+//getter and setter for Project
+public String getProject() {return Project;}
+public void setProject(String Project) {this.Project = Project;}
 
 //getter and setter for EndDay
 public void setEndDay(Time EndDay) {this.EndDay = EndDay;}
