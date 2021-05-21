@@ -1,5 +1,6 @@
 package com.time.trangecino.Endpoint;
 
+/*
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Data.Domain.WorkSchedule;
 import com.time.trangecino.business.service.EmployeeService;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 //written by Kaan
 
-/*
+
 @RestController
 @RequestMapping(path= "/WorkSchedule")
 public class WorkScheduleEndpoint {
