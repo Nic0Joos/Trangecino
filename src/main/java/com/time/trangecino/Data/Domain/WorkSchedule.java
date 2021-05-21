@@ -8,26 +8,28 @@ import java.util.Date;
 public class WorkSchedule {
 
 
-    private int ID;
+    private Long ID;
     private Date date;
-    private boolean Holiday;
+    private boolean OutOfOffice;
     private Time StartMorning;
     private Time Lunch;
     private Time StartAfternoon;
     private Time EndDay;
+    private String Project;
+
 
 
 //getter and setter for ID
-public int getID(){ return ID; };
-public void setID(int ID)  {this.ID = ID;}
+public Long getID(){ return ID;}
+public void setID(Long ID)  {this.ID = ID;}
 
 //getter and setter for date
 public Date getdate() {return date;}
 public void setDate(Date date) {this.date = date;}
 
 //getter and setter for holiday
-public boolean getHoliday() {return Holiday;}
-public void setHoliday(Boolean Holiday) {this.Holiday = Holiday;}
+public boolean getOutOfOffice() {return OutOfOffice;}
+public void setOutOfOffice(Boolean OutOfOffice) {this.OutOfOffice = OutOfOffice;}
 
 //getter and setter for StartMorning
 public Time getStartMorning() {return StartMorning;}
@@ -40,6 +42,10 @@ public void setLunch(Time Lunch) {this.Lunch = Lunch;}
 //getter and setter for StartAfternoon
 public Time getStartAfternoon() {return StartAfternoon;}
 public void setStartAfternoon(Time StartAfternoon) {this.StartAfternoon = StartAfternoon;}
+
+//getter and setter for Project
+public String getProject() {return Project;}
+public void setProject(String Project) {this.Project = Project;}
 
 //getter and setter for EndDay
 public void setEndDay(Time EndDay) {this.EndDay = EndDay;}

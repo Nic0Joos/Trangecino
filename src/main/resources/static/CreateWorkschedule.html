@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="script" href="../assets/js/app.js">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
         <div class="row">
             <div class="col" style="margin-top: 20px;margin-bottom: 30px;">
                 <form>
-                    <p style="padding: 10px;"><strong>Employee</strong></p><select class="form-control" style="margin-bottom: 10px;font-size: 20px;">
+                    <p style="padding: 10px;"><strong>Employee</strong></p><select id="EmployeeSelect" class="form-control" style="margin-bottom: 10px;font-size: 20px;">
                         <optgroup label="Employees">
                             <option value="12" selected="">Get Employees</option>
 
@@ -62,23 +63,18 @@
             </div>
             <div class="col-lg-6" style="margin-top: 20px;margin-bottom: 30px;">
                 <form>
-                    <p style="padding: 10px;"><strong>Holiday</strong></p><select class="form-control" style="margin-bottom: 10px;font-size: 20px;">
-                        <optgroup label="Holiday?">
+                    <p style="padding: 10px;"><strong>Out of office</strong></p><select id="OOOSelect" class="form-control" style="margin-bottom: 10px;font-size: 20px;">
+                        <optgroup label="Out of office?">
                             <option value="true" selected="">Yes</option>
                             <option value="false">No</option>
 
                         </optgroup>
                     </select>
-                    <p style="padding: 10px;"><strong>Project</strong></p><select class="form-control" style="margin-bottom: 10px;font-size: 20px;">
-                        <optgroup label="Project">
-                            <option value="12" selected="">This is item 1</option>
-
-
-
-
-                        </optgroup>>
-                    </select>
-                </form>
+                    <p style="padding: 10px;"><strong>Project</strong></p>
+                        <p label="Project">
+                            <input class="form-control form-control-lg" name="projectname" type="text" style="margin-top: 0px;margin-bottom: 20px;" placeholder="Name">
+                        </p>
+                    </form>
             </div>
         </div>
         <div class="row">
@@ -113,6 +109,15 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script language="JavaScript">
+        $(document).ready(function () {
+               $(#saveBtn).click(function (event) {
+                   PostWorkSchedule($("EmployeeSelect").val(), $("OOOSelect").val(), $('input[date=date]').val(), $('input[projectname=projectname]').val(),
+                            });
+             });
+    </script>
+
 </body>
 
 </html>

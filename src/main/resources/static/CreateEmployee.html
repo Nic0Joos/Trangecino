@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="script" href="../assets/js/app.js">
 </head>
 
 <body>
@@ -92,13 +93,12 @@
 
     <script language="JavaScript">
         $(document).ready(function () {
-           $(#saveBtn).click(function (event) {
-               PostEmployee($('input[surname=surname]').val(), $('input[email=email]').val(), $('input[password=password]').val(),
-                        $('input[familyname=familyname]').val(), $('input[department=department]').val(),
-                        });
+               $(#saveBtn).click(function (event) {
+                   PostEmployee($('input[surname=surname]').val(), $('input[email=email]').val(), $('input[password=password]').val(),
+                            $('input[familyname=familyname]').val(), $('input[department=department]').val(),
+                            );
+                   });
                });
-           });
-         });
     </script>
 
 </body>
