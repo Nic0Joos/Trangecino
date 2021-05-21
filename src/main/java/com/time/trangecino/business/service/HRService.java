@@ -47,6 +47,18 @@ public class HRService {
 		HRRepository.deleteById(HRID);
 	}
 
+	//find HR
+	public List<HR> findAllHR() {
+		return HRRepository.findAll();
+	}
+	//find one HR
+	public HR findHRById(long HRID) throws Exception {
+		List<HR> HRList = HRRepository.findbyID(HRID);
+		if (HRList.isEmpty()) {
+			throw new Exception("No HR with ID " + HRID + " found.");
+		}
+		return HRList.get(0);
+	}
 
 
 

@@ -52,6 +52,22 @@ public class HREndpoint {
         }
         return ResponseEntity.accepted().build();
     }
+    //get all HR
+    @GetMapping(path = "/HR", produces = "application/json")
+    public List<HR> getHR() {
+        return HRService.findAllHR();
+    }
+    //get specific HR
+    @GetMapping(path = "/HR/{HRId}", produces = "application/json")
+    public ResponseEntity<HR> getHR(@PathVariable(value = "HRId") String HRId) {
+        HR HR;
+        try {
+            HR = HRService.findHRById(Long.parseLong(HRId));
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+        return ResponseEntity.ok(HR);
+    }
 
 
 
