@@ -41,8 +41,7 @@ public class AdminService {
     }
 
     //delete Admin
-    public void deleteAdmin (Long ID) {
-        adminRepository.deleteById(ID);
+    public void deleteAdmin (Long adminID) { adminRepository.deleteById(adminID);
         }
 }
 
