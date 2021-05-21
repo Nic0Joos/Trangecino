@@ -1,5 +1,6 @@
 package com.time.trangecino.Endpoint;
 
+import com.time.trangecino.Data.Domain.Admin;
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.business.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 //written by Luca Weisskopf
 
@@ -52,6 +55,24 @@ public class EmployeeEndpoint {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
         return ResponseEntity.accepted().build();
+    }
+
+    //get all Admins
+    @GetMapping(path = "/employee", produces = "application/json")
+    public List<Employee> getEmployee() {
+        return employeeService.findAllEmployees();
+    }
+
+    //get specific Admin
+    @GetMapping(path = "/employee/{employeeId}", produces = "application/json")
+    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "employeeId") String employeeId) {
+        Employee employee = null;
+        try {
+            employee = employeeService.findEmployeeById(Long.parseLong(employeeId));
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+        return ResponseEntity.ok(employee);
     }
 
     }

@@ -1,13 +1,14 @@
 package com.time.trangecino.business.service;
 
+import com.time.trangecino.Data.Domain.Admin;
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.util.List;
 
 //Written by Luca
 @Service
@@ -39,9 +40,23 @@ public class EmployeeService {
         }
     }
 
-
         //delete Employee
         public void deleteEmployee (Long employeeID){
             employeeRepository.deleteById(employeeID);
         }
+
+
+    //find all employees
+    public List<Employee> findAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+    //find one employee
+    public Employee findEmployeeById(long employeeID) throws Exception {
+        List<Employee> employeeList = employeeRepository.findbyID(employeeID);
+        if (employeeList.isEmpty()){
+            throw new Exception("No admin with ID "+employeeID+" found.");
+        }
+        return employeeList.get(0);
+    }
 }
