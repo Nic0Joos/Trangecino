@@ -14,6 +14,5 @@ public interface AdminRepository extends JpaRepository<Admin, Long> {
 
     String findbyEmail(String email);
     void deleteById(Admin ID);
-
     List<Admin> findbyID(long adminID);
 }

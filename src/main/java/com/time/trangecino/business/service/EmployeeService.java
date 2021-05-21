@@ -39,8 +39,8 @@ public class EmployeeService {
         }
     }
 
-        //delete employee
-        public void deleteEmployee (Long employeeID){
+    //delete employee
+    public void deleteEmployee (Long employeeID){
             employeeRepository.deleteById(employeeID);
         }
 
@@ -50,7 +50,7 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    //find one employee
+    //find one specific employee
     public Employee findEmployeeById(long employeeID) throws Exception {
         List<Employee> employeeList = employeeRepository.findbyID(employeeID);
         if (employeeList.isEmpty()){

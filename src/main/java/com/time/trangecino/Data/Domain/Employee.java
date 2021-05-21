@@ -1,7 +1,6 @@
 package com.time.trangecino.Data.Domain;
 
-//written by Luca
+//written by Luca Weisskopf
 public class Employee extends User {
-
 
 }

@@ -27,7 +27,7 @@ public void setID(Long ID)  {this.ID = ID;}
 public Date getdate() {return date;}
 public void setDate(Date date) {this.date = date;}
 
-//getter and setter for holiday
+//getter and setter for OutOfOffice
 public boolean getOutOfOffice() {return OutOfOffice;}
 public void setOutOfOffice(Boolean OutOfOffice) {this.OutOfOffice = OutOfOffice;}
 

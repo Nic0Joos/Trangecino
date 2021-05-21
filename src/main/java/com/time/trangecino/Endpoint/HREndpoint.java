@@ -52,6 +52,7 @@ public class HREndpoint {
         }
         return ResponseEntity.accepted().build();
     }
+
     //get all HR
     @GetMapping(path = "/HR", produces = "application/json")
     public List<HR> getHR() {
@@ -68,10 +69,6 @@ public class HREndpoint {
         }
         return ResponseEntity.ok(HR);
     }
-
-
-
-
 
 }
 
