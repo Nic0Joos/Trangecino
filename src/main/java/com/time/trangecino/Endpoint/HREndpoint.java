@@ -5,29 +5,54 @@ import com.time.trangecino.Data.Domain.HR;
 import com.time.trangecino.business.service.EmployeeService;
 import com.time.trangecino.business.service.HRService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 //Written by Alex
 
 @RestController
 @RequestMapping(path= "/HR")
 public class HREndpoint {
-
-    private HRService hrService;
-
+    private HRService HRService;
+    private HREndpoint HREndpoint;
     @Autowired
-    public HREndpoint(HRService hrService) {
-        this.hrService = hrService; }
+    public HREndpoint(HREndpoint HREndpoint) { this.HREndpoint = HREndpoint; }
 
-    @PostMapping
-    public void postHR(/*@RequestBody?*/ HR hr) {
+
+    //add HR - Endpoint
+    @PostMapping(path = "/create")
+    public ResponseEntity<Void> postHR(@RequestBody HR HR) {
         try {
-            hrService.registerHR(hr);
+            HRService.addHR(HR);
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
+    //edit HR - Endpoint
+    @PutMapping(path ="/edit")
+    public ResponseEntity<Void> editHR(@RequestBody HR HR){
+        try {
+            HRService.editHR(HR);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
+    //delete HR - Endpoint
+    @DeleteMapping(path="/delete")
+    public ResponseEntity<Void> deleteHR(HR HR){
+        try {
+            HRService.deleteHR(HR.getID());
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+        return ResponseEntity.accepted().build();
+    }
+
+
 }
+

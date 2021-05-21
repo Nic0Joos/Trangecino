@@ -6,45 +6,48 @@ import com.time.trangecino.Repository.EmployeeRepository;
 import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
+
 
 //Written by Alex
-
 @Service
 public class HRService {
-	
-	@Autowired
-	HR User;
-
-	public String getCurrentHRUser() {
-		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		return User.getEmail();
-	}
-
 
 	@Autowired
-	private HRRepository hRRepository;
+	private HRRepository HRRepository;
 
-	public void registerHR(@Validated HR hr) throws Exception {
-		if (hr.getID() == null) {
-			if (hRRepository.findByEmail(hr.getEmail()) != null) {
-				throw new Exception("Email address " + hr.getEmail() + "already assigned to another HR Employee.");
-			} else {
-				hRRepository.save(hr);
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	//add and save HR
+	public void addHR(@Valid HR HR) throws Exception {
+		if (HR.getID() == null) {
+			if (HRRepository.findByEmail(HR.getEmail()) != null) {
+				throw new Exception("Please enter a new email address");
 			}
 		}
-	/* public String createOverview(){
-		return null;
+		HR.setPassword(passwordEncoder.encode(HR.getPassword()));
+		HRRepository.save(HR);
 	}
 
-	public void assignProject () {
-*/
-
+	//edit HR
+	public HR editHR(@Valid HR HR) throws Exception {
+		if (HR.getID() == null) {
+			throw new Exception("No HR found");
+		} else {
+			return HRRepository.save(HR);
+		}
 	}
-	/*public void createWorkschedule extends WorkScheduleService {
 
+
+	//delete HR
+	public void deleteHR (Long HRID){
+		HRRepository.deleteById(HRID);
 	}
-*/
 }
+
+
