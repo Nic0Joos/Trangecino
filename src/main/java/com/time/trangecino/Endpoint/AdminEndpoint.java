@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 //written by Lennart
 
 @RestController
@@ -53,7 +55,24 @@ public class AdminEndpoint {
         }
         return ResponseEntity.accepted().build();
     }
+    //get all Admins
+    @GetMapping(path = "/admin", produces = "application/json")
+    public List<Admin> getAdmins() {
+        return adminService.findAllAdmins();
+    }
+    //get specific Admin
+    @GetMapping(path = "/admin/{adminId}", produces = "application/json")
+    public ResponseEntity<Admin> getAdmin(@PathVariable(value = "adminId") String adminId) {
+        Admin admin = null;
+        try {
+            admin = adminService.findAdminById(Long.parseLong(adminId));
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+        return ResponseEntity.ok(admin);
+    }
 
-}
+    }
+
 
 
