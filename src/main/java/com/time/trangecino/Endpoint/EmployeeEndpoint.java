@@ -57,13 +57,13 @@ public class EmployeeEndpoint {
         return ResponseEntity.accepted().build();
     }
 
-    //get all employee
+    //get all employee - Endpoint
     @GetMapping(path = "/employee", produces = "application/json")
     public List<Employee> getEmployee() {
         return employeeService.findAllEmployees();
     }
 
-    //get specific employee
+    //get specific employee - Endpoint
     @GetMapping(path = "/employee/{employeeId}", produces = "application/json")
     public ResponseEntity<Employee> getEmployee(@PathVariable(value = "employeeId") String employeeId) {
         Employee employee = null;
