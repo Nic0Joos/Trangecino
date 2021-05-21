@@ -10,17 +10,16 @@ import org.springframework.stereotype.Service;
 import javax.validation.Valid;
 import java.util.List;
 
-//Written by Luca
+//Written by Luca Weisskopf
 @Service
 public class EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    //add and save Employee
+    //add and save employee
     public void addEmployee(@Valid Employee employee) throws Exception {
         if (employee.getID() == null) {
             if (employeeRepository.findByEmail(employee.getEmail()) != null) {
@@ -31,7 +30,7 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
-    //edit Employee
+    //edit employee
     public Employee editEmployee(@Valid Employee employee) throws Exception {
         if (employee.getID() == null) {
             throw new Exception("No employee found");
@@ -40,7 +39,7 @@ public class EmployeeService {
         }
     }
 
-        //delete Employee
+        //delete employee
         public void deleteEmployee (Long employeeID){
             employeeRepository.deleteById(employeeID);
         }
