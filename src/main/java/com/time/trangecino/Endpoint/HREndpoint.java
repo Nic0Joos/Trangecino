@@ -1,14 +1,14 @@
 package com.time.trangecino.Endpoint;
 
-import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Data.Domain.HR;
-import com.time.trangecino.business.service.EmployeeService;
 import com.time.trangecino.business.service.HRService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 //Written by Alex
 
 @RestController
@@ -52,6 +52,9 @@ public class HREndpoint {
         }
         return ResponseEntity.accepted().build();
     }
+
+
+
 
 
 }
