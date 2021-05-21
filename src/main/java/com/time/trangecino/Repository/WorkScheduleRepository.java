@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 //written by Kaan
 @Repository
 public interface WorkScheduleRepository extends JpaRepository<WorkSchedule, Boolean> {
-    WorkSchedule findByboolean(boolean Holiday);
+    WorkSchedule findByOutOfOffice(boolean OutOfOffice);
     void deleteById(Integer ID);
 
 }

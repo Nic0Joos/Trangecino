@@ -1,6 +1,6 @@
 package com.time.trangecino.business.service;
 
-/*
+
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Data.Domain.WorkSchedule;
 import com.time.trangecino.Repository.EmployeeRepository;
@@ -11,52 +11,49 @@ import org.springframework.stereotype.Service;
 import javax.validation.Valid;
 
 //written by Kaan
-/*
+
 @Service
 
 public class WorkScheduleService {
 
     @Autowired
     private WorkScheduleRepository workschedulerepository;
+    @Autowired
+    private WorkSchedule workschedule;
 
-      private WorkingDaysStatus status;
+
 
     public void createWorkschedule(@Valid WorkSchedule workschedule) throws Exception {
-        if (workschedule.getWorkSchedule == "Holiday") {
-            if (WorkScheduleRepository.findByHoliday(workschedule.getWorkschedule()) != null) {
-                throw new Exception("Please create a Workschedule");
-            }
+        workschedulerepository.save(workschedule);
+
         }
 
 
 
-      public enum WorkingDaysStatus {
+      /*public enum WorkingDaysStatus {
   // possible workdays
       OutOfOffice,
       InOffice,
-      ;
-}}
+      ;*/
+
 
 
  public boolean areUWorking() {
-      if (getWorkingDaysStatus() == WorkingDaysStatus.InOffice) {
-            return true;
-          }
-          return false;
-      }
+      return workschedule.getOutOfOffice();
+ }
 
 
     private void getWorkingDaysStatus() {
     }
 
- public void createWorkschedule(@Valid Workschedule workschedule) throws Exception {
-        if (WorkSchedule.getID() == null) {
-            if (WorkScheduleRepository.findByEmail(Workschedule.getEmail()) != null) {
-                throw new Exception("Please enter a new email address");
+ public void EditWorkschedule(@Valid WorkSchedule workschedule) throws Exception {
+        if (workschedule.getID() == null) {
+            throw new Exception("WorkSchedule already exists!");
+
             }
-        }
-        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
-        employeeRepository.save(employee);
+         workschedulerepository.save(workschedule);
+ }
+
     }
 
 
@@ -64,5 +61,4 @@ public class WorkScheduleService {
 
 
 
-}
-*/
+

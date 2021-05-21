@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 //written by Kaan
 
-/*
+
 @RestController
 @RequestMapping(path= "/WorkSchedule")
 public class WorkScheduleEndpoint {
@@ -21,17 +21,17 @@ public class WorkScheduleEndpoint {
 
     @Autowired
     public WorkScheduleEndpoint(WorkScheduleService workscheduleservice) { this.workscheduleservice = workscheduleservice;}
-}
 
 
-//add a workscheduleplan, POST
-    /*@PostMapping(path = "/create")
+
+//create a workscheduleplan, POSTMap
+
 @PostMapping(path = "/create")
 public ResponseEntity<Void> createWorkschedule(@RequestBody WorkSchedule workschedule) {
     try {
-        workscheduleservice.createWorkschedule(WorkSchedule);
+        workscheduleservice.createWorkschedule(workschedule);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     } catch (Exception e) {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-}*/
+}}
