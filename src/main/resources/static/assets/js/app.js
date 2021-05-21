@@ -18,12 +18,31 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
         //error
 
         });
-    };
+    }
+
+    function login(email, password){
+            $.ajax({
+                type: "POST",
+                url: serviceEndpointURL + "/login",
+                data: JSON.stringify({
+                            "email": email,
+                            "password": password,
+                        }),
+                success: function (data, textStatus, response) {
+                            callback(true);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(jqXHR, textStatus, errorThrown);
+                            callback(false);
+                        }
+            });
+    }
 
     function PostEmployee(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
-            url: serviceEndpointURL + "/employee",
+            url: serviceEndpointURL + "/employee/create",
             data: JSON.stringify({
                 "surname": surname,
                 "email": email,
@@ -31,18 +50,22 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
                 "familyname": familyname,
                 "department": department,
             }),
+            success: function (data, textStatus, response) {
+                            callback(true);
 
-            //success
-
-            //error
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(jqXHR, textStatus, errorThrown);
+                            callback(false);
+            }
 
             });
-    };
+    }
 
     function PostHR(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
-            url: serviceEndpointURL + "/HR",
+            url: serviceEndpointURL + "/HR/create",
             data: JSON.stringify({
                     "surname": surname,
                     "email": email,
@@ -51,11 +74,57 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
                     "department": department,
             }),
 
-            //success
+            success: function (data, textStatus, response) {
+                                        callback(true);
 
-            //error
+                        },
+            error: function (jqXHR, textStatus, errorThrown) {
+                                        console.log(jqXHR, textStatus, errorThrown);
+                                        callback(false);
+                        }
 
             });
-    };
+    }
+
+    function PostWorkSchedule(emploee, OutofOfficeSelect, date, projectname){
+                $.ajax({
+                type: "POST",
+                url: serviceEndpointURL + "/workschedule/create",
+                data: JSON.stringify({
+
+                        "emploee": employee,
+                        "OutofOfficeSelect" : OutofOfficeSelect,
+                        "date": date,
+                        "projectname": projectname,
+                }),
+
+                success: function (data, textStatus, response) {
+                                            callback(true);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                                            console.log(jqXHR, textStatus, errorThrown);
+                                            callback(false);
+                            }
+
+                });
+        }
 
 
+    function GetEmployees(){
+
+    }
+
+    function GetHR(){
+
+    }
+
+
+
+    function postHR(){
+
+    }
+
+    function postEmployee(){
+
+    }
