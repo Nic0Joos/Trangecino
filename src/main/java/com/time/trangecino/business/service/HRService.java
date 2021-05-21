@@ -1,16 +1,14 @@
 package com.time.trangecino.business.service;
 
-import com.time.trangecino.Data.Domain.Admin;
+
 import com.time.trangecino.Data.Domain.HR;
-import com.time.trangecino.Repository.EmployeeRepository;
 import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 //Written by Alex
@@ -48,6 +46,24 @@ public class HRService {
 	public void deleteHR (Long HRID){
 		HRRepository.deleteById(HRID);
 	}
+
+	//find HR
+	public List<HR> findAllHR() {
+		return HRRepository.findAll();
+	}
+	//find one HR
+	public HR findHRById(long HRID) throws Exception {
+		List<HR> HRList = HRRepository.findbyID(HRID);
+		if (HRList.isEmpty()) {
+			throw new Exception("No HR with ID " + HRID + " found.");
+		}
+		return HRList.get(0);
+	}
+
+
+
+
+
 }
 
 
