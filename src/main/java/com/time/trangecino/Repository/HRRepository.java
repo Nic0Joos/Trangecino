@@ -17,4 +17,5 @@ public interface HRRepository extends JpaRepository<HR, Long> {
 
      HR findByEmail(String email);
      void deleteById(HR ID);
+
 }
