@@ -1,12 +1,10 @@
 package com.time.trangecino.Data.Domain;
 
-
 import java.sql.Time;
 import java.util.Date;
 
 //written by Kaan
 public class WorkSchedule {
-
 
     private Long ID;
     private Date date;
@@ -16,7 +14,6 @@ public class WorkSchedule {
     private Time StartAfternoon;
     private Time EndDay;
     private String Project;
-
 
 
 //getter and setter for ID
@@ -49,4 +46,5 @@ public void setProject(String Project) {this.Project = Project;}
 
 //getter and setter for EndDay
 public void setEndDay(Time EndDay) {this.EndDay = EndDay;}
-        }
+
+}

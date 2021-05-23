@@ -1,12 +1,10 @@
 package com.time.trangecino.business.service;
 
-import com.time.trangecino.Data.Domain.Admin;
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import javax.validation.Valid;
 import java.util.List;
 

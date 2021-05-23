@@ -1,6 +1,5 @@
 package com.time.trangecino.Endpoint;
 
-import com.time.trangecino.Data.Domain.Admin;
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.business.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
