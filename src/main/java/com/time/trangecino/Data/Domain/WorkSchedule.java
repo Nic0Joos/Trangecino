@@ -1,12 +1,10 @@
 package com.time.trangecino.Data.Domain;
 
-
 import java.sql.Time;
 import java.util.Date;
 
 //written by Kaan
 public class WorkSchedule {
-
 
     private Long ID;
     private Date date;
@@ -18,7 +16,6 @@ public class WorkSchedule {
     private String Project;
 
 
-
 //getter and setter for ID
 public Long getID(){ return ID;}
 public void setID(Long ID)  {this.ID = ID;}
@@ -27,7 +24,7 @@ public void setID(Long ID)  {this.ID = ID;}
 public Date getdate() {return date;}
 public void setDate(Date date) {this.date = date;}
 
-//getter and setter for holiday
+//getter and setter for OutOfOffice
 public boolean getOutOfOffice() {return OutOfOffice;}
 public void setOutOfOffice(Boolean OutOfOffice) {this.OutOfOffice = OutOfOffice;}
 
@@ -49,4 +46,5 @@ public void setProject(String Project) {this.Project = Project;}
 
 //getter and setter for EndDay
 public void setEndDay(Time EndDay) {this.EndDay = EndDay;}
-        }
+
+}
