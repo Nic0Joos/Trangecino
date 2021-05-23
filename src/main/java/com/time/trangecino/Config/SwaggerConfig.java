@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2019. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+ * All rights reserved.
+ */
+
 package com.time.trangecino.Config;
 
 import org.springframework.context.annotation.Bean;
