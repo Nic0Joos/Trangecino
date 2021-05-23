@@ -1,8 +1,5 @@
 package com.time.trangecino.Data.Domain;
 
-
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
