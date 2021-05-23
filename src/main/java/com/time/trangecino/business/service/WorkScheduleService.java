@@ -19,13 +19,16 @@ public class WorkScheduleService {
 
     // create workschedule
     public void createWorkschedule(@Valid WorkSchedule workschedule) throws Exception {
-        workschedulerepository.save(workschedule);
+        if(workschedule.getID() == null) {
+            workschedulerepository.save(workschedule);
+        }
+            throw new Exception("There is already a workschedule in place. ");
     }
 
     // edit workschedule
     public void editWorkschedule(@Valid WorkSchedule workschedule) throws Exception {
         if (workschedule.getID() == null) {
-            throw new Exception("WorkSchedule already exists!");
+            throw new Exception("No Workschedule found!");
         }
         workschedulerepository.save(workschedule);
     }
@@ -53,10 +56,3 @@ public class WorkScheduleService {
     }
 
 }
-
-
-
-
-
-
-
