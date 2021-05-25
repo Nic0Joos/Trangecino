@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
-    <link rel="script" href="../assets/js/app.js">
 </head>
 
 <body>
@@ -20,7 +19,7 @@
         <div class="container-fluid"><a class="navbar-brand" href="Index.html" style="color: var(--white);"><strong>Trangecino</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav text-left">
-                    <li class="nav-item"><a class="nav-link active" href="AdminPanel.html" style="color: var(--white);">Managment</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="AdminPanel.html" style="color: var(--white);">Management</a></li>
                     <li class="nav-item"><a class="nav-link" href="HRPanel.html" style="color: var(--white);">Human Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="EmployeePanel.html" style="color: var(--white);">Workforce</a></li>
                 </ul>
@@ -43,43 +42,69 @@
         </div>
     </div>
     <div class="container">
-        <h1 class="text-center" style="padding: 10px;font-size: 25px;">Create new schedules for your employees</h1>
+        <h1 class="text-center" style="padding: 10px;">Change an admin</h1>
         <div class="row">
-            <div class="col" style="margin-top: 20px;margin-bottom: 30px;">
-                <form>
-                    <p style="padding: 10px;"><strong>Employee</strong></p><select id="EmployeeSelect" class="form-control" style="margin-bottom: 10px;font-size: 20px;">
-                        <optgroup label="Employees">
-                            <option value="12" selected="">Get Employees</option>
-
-                        </optgroup>
-                    </select>
-                    <p style="padding: 10px;"><strong>Date</strong></p>
-                </form>
-                <div class="form-group">
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="datePicker">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6" style="margin-top: 20px;margin-bottom: 30px;">
-                <form>
-                    <p style="padding: 10px;"><strong>Out of office</strong></p><select id="OutOfOffice" class="form-control" style="margin-bottom: 10px;font-size: 20px;">
-                        <optgroup label="Out of office?">
-                            <option value="true" selected="">Yes</option>
-                            <option value="false">No</option>
-
-                        </optgroup>
-                    </select>
-                    <p style="padding: 10px;"><strong>Project</strong></p>
-                        <p label="Project">
-                            <input class="form-control form-control-lg" name="projectname" type="text" style="margin-top: 0px;margin-bottom: 20px;" placeholder="Name">
-                        </p>
-                    </form>
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th>Name </th>
+                        <th>Email </th>
+                        <th>Mobile </th>
+                        <th>Action </th>
+                    </tr>
+                    </thead>
+                    <tbody id="AdminTable">
+                    </tbody>
+                </table>
             </div>
         </div>
+
+        <h1 class="text-center" style="padding: 10px;">Change an HR worker</h1>
         <div class="row">
-            <div class="col" style="margin-top: 20px;margin-bottom: 50px;"><button class="btn btn-primary" type="button" style="width: 100px;background: var(--cyan);border-color: var(--cyan);font-size: 20px;"><strong>Create</strong></button></div>
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th>Name </th>
+                        <th>Email </th>
+                        <th>Mobile </th>
+                        <th>Action </th>
+                    </tr>
+                    </thead>
+                    <tbody id="HRTable">
+                    </tbody>
+                </table>
+
+
+            </div>
         </div>
+
+        <h1 class="text-center" style="padding: 10px;">Change an employee</h1>
+        <div class="row">
+            <div class="col">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th>Name </th>
+                        <th>Email </th>
+                        <th>Mobile </th>
+                        <th>Action </th>
+                    </tr>
+                    </thead>
+                    <tbody id="AdminTable">
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+
     </div>
     <footer class="footer-dark">
         <div class="container">
@@ -89,7 +114,7 @@
                     <ul>
                         <li><a href="AdminPanel.html">Management</a></li>
                         <li><a href="HRPanel.html">Human Resources</a></li>
-                        <li><a href="EmployeePanel.html">Workforce</a></li>
+                        <li><a href="EmployeePanel.html">Hosting</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
@@ -101,7 +126,7 @@
                 </div>
                 <div class="col-md-6 item text">
                     <h3>Trangecino</h3>
-                    <p>Trangecino was created by five students of FHNW. It was created to work on our IT project.&nbsp;</p>
+                    <p>Trangecino was created by five students of FHNW. It was created to work on our IT project.<br><br></p>
                 </div>
             </div>
             <p class="copyright">Trangecino © 2021</p>
@@ -109,26 +134,6 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-    <script language="JavaScript">
-        $(document).ready(function () {
-               $(loadEmployees());
-
-                    function loadEmployees() {
-                        GetEmployees(function (result){
-                            $.each(result, function (i, item) {
-                                $("#EmployeeSelect").append(<option value="${item.id}"> ${item.name} </option>)
-                            });
-                        });
-                    }
-
-
-               $(#saveBtn).click(function (event) {
-                   PostWorkSchedule($("EmployeeSelect").val(), $("OutOfOffice").val(), $('input[date=date]').val(), $('input[projectname=projectname]').val(),
-                            });
-             });
-    </script>
-
 </body>
 
 </html>
