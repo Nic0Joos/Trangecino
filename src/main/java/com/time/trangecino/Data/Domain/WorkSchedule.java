@@ -16,8 +16,9 @@ public class WorkSchedule {
     private String Project;
 
    // ...
-    public WorkSchedule (Long ID, Time StartMorning, Time Lunch, Time StartAfternoon, Time EndDay, String Project) {
+    public WorkSchedule (Long ID, Date date, Time StartMorning, Time Lunch, Time StartAfternoon, Time EndDay, String Project) {
         this.ID = ID;
+        this.date = date;
         this.StartMorning = StartMorning;
         this.Lunch = Lunch;
         this.StartAfternoon = StartAfternoon;
