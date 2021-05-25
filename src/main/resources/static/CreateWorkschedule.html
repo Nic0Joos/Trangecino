@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-6" style="margin-top: 20px;margin-bottom: 30px;">
                 <form>
-                    <p style="padding: 10px;"><strong>Out of office</strong></p><select id="OOOSelect" class="form-control" style="margin-bottom: 10px;font-size: 20px;">
+                    <p style="padding: 10px;"><strong>Out of office</strong></p><select id="OutOfOffice" class="form-control" style="margin-bottom: 10px;font-size: 20px;">
                         <optgroup label="Out of office?">
                             <option value="true" selected="">Yes</option>
                             <option value="false">No</option>
@@ -113,7 +113,7 @@
     <script language="JavaScript">
         $(document).ready(function () {
                $(#saveBtn).click(function (event) {
-                   PostWorkSchedule($("EmployeeSelect").val(), $("OOOSelect").val(), $('input[date=date]').val(), $('input[projectname=projectname]').val(),
+                   PostWorkSchedule($("EmployeeSelect").val(), $("OutOfOffice").val(), $('input[date=date]').val(), $('input[projectname=projectname]').val(),
                             });
              });
     </script>
