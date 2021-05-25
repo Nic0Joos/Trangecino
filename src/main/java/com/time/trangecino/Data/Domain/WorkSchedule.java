@@ -6,7 +6,7 @@ import java.util.Date;
 //written by Kaan
 public class WorkSchedule {
 
-    private Long ID;
+    private Long WorkScheduleID;
     private Date date;
     private boolean OutOfOffice;
     private Time StartMorning;
@@ -14,10 +14,10 @@ public class WorkSchedule {
     private Time StartAfternoon;
     private Time EndDay;
     private String Project;
+    private Employee employee;
 
    // ...
-    public WorkSchedule (Long ID, Date date, Time StartMorning, Time Lunch, Time StartAfternoon, Time EndDay, String Project) {
-        this.ID = ID;
+    public WorkSchedule (Date date, Time StartMorning, Time Lunch, Time StartAfternoon, Time EndDay, String Project) {
         this.date = date;
         this.StartMorning = StartMorning;
         this.Lunch = Lunch;
@@ -26,11 +26,23 @@ public class WorkSchedule {
         this.Project = Project;
     }
 
-//getter and setter for ID
-public Long getID(){ return ID;}
-public void setID(Long ID)  {this.ID = ID;}
+    //getter setter employee
+    public Employee getEmployee() {
+        return employee;
+    }
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
-//getter and setter for date
+    public Long getWorkScheduleID() {
+        return WorkScheduleID;
+    }
+
+    public void setWorkScheduleID(Long workScheduleID) {
+        WorkScheduleID = workScheduleID;
+    }
+
+    //getter and setter for date
 public Date getdate() {return date;}
 public void setDate(Date date) {this.date = date;}
 

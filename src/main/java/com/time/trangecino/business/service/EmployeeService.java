@@ -3,6 +3,7 @@ package com.time.trangecino.business.service;
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.validation.Valid;
@@ -56,4 +57,11 @@ public class EmployeeService {
         }
         return employeeList.get(0);
     }
+
+    public Employee getCurrentEmployee() {
+        String email = (String)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return  employeeRepository.findByEmail(email);
+    }
+
 }
