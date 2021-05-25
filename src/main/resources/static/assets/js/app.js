@@ -13,10 +13,13 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             "surname": surname,
             "familyname": familyname,
         }),
-        //success
-
-        //error
-
+        success: function(data, textStatus, response) {
+                callback(true);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+                console.log(jqXHR, textStatus, errorThrown);
+                callback(false);
+        }
         });
     }
 
@@ -111,15 +114,101 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
         }
 
 
-    function GetEmployees(){
+    function GetEmployees(callback){
+        $.ajax({
+            type: "GET",
+            datatype: "json",
+            url: serviceEndpointURL + "/customer",
 
+            success: function(data, textStatus, response) {
+                callback(data);
+            },
+
+            error: function(jqXHR, textStatus, errorThrown){
+                console.log(jqXHR, textStatus, errorThrown);
+            },
+        });
     }
 
-    function GetHR(){
+    function GetEmployee(employeeID, callback){
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                url: serviceEndpointURL + "/customer" + employeeID,
 
-    }
+                success: function(data, textStatus, response) {
+                    callback(data);
+                },
 
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+            });
+        }
 
+    function GetHRs(callback){
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                url: serviceEndpointURL + "/HR",
+
+                success: function(data, textStatus, response) {
+                    callback(data);
+                },
+
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+            });
+        }
+
+    function GetHR(HRID, callback){
+                $.ajax({
+                    type: "GET",
+                    datatype: "json",
+                    url: serviceEndpointURL + "/HR" + HRID,
+
+                    success: function(data, textStatus, response) {
+                        callback(data);
+                    },
+
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log(jqXHR, textStatus, errorThrown);
+                    },
+                });
+            }
+
+    function GetAdmins(callback){
+                $.ajax({
+                    type: "GET",
+                    datatype: "json",
+                    url: serviceEndpointURL + "/admin",
+
+                    success: function(data, textStatus, response) {
+                        callback(data);
+                    },
+
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log(jqXHR, textStatus, errorThrown);
+                    },
+                });
+            }
+
+    function GetAdmin(AdminID, callback){
+                $.ajax({
+                    type: "GET",
+                    datatype: "json",
+                    url: serviceEndpointURL + "/Admin" + AdminID,
+
+                    success: function(data, textStatus, response) {
+                        callback(data);
+                    },
+
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log(jqXHR, textStatus, errorThrown);
+                    },
+                });
+            }
 
     function postHR(){
 
@@ -128,3 +217,11 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
     function postEmployee(){
 
     }
+
+    function postAdmin(){
+
+
+    }
+
+
+
