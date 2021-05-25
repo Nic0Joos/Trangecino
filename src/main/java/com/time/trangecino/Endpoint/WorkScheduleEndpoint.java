@@ -1,7 +1,7 @@
 package com.time.trangecino.Endpoint;
 
-
 import com.time.trangecino.Data.Domain.WorkSchedule;
+import com.time.trangecino.Repository.WorkScheduleRepository;
 import com.time.trangecino.business.service.WorkScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,18 +9,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+import java.util.Optional;
+
 //written by Kaan
 
 
 @RestController
 @RequestMapping(path= "/WorkSchedule")
 public class WorkScheduleEndpoint {
-
     private WorkScheduleService workscheduleservice;
+    private WorkScheduleEndpoint workScheduleEndpoint;
 
     @Autowired
     public WorkScheduleEndpoint(WorkScheduleService workscheduleservice) { this.workscheduleservice = workscheduleservice;}
-
+    @Autowired
+    private WorkScheduleRepository workScheduleRepository;
 
 
     //create a workscheduleplan, POSTMap
@@ -56,21 +60,23 @@ public class WorkScheduleEndpoint {
         return ResponseEntity.accepted().build();
     }
 
-    /*
+   // all workschedules from all employees
     @GetMapping
     public List<WorkSchedule> getAllWorkSchedule(){
-        return WorkScheduleRepository.findAll();
+        return workScheduleRepository.findAll();
     }
 
+    // all workschedules from one employee
     @GetMapping
     public List <WorkSchedule> getWorkScheduleFromUser (@PathVariable Long ID) {
-        return WorkScheduleRepository.findAllFromUser(ID);
+        return workScheduleRepository.findAllFromUser(ID);
     }
 
+    // one workschedule from one employee
     @GetMapping(path = "/{ID}")
     public Optional<WorkSchedule> getOneWorkSchedule(@PathVariable Long ID) {
-        return WorkScheduleRepository.findById(ID);
+        return workScheduleRepository.findbyID(ID);
         //optional means return the one workschedule, if there is none return null
     }
-     */
+
 }
