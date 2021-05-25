@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+
+//Luca Weisskopf
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -24,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("admin1").password(passwordEncoder().encode("adminPass"));
     }
 
-    //authorizing requests, redirecting to html pages
+    //authorizing requests, redirect to html page
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
@@ -34,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/Login.html")
-                .failureUrl("/LoginError.html")
                 .and()
                 .logout();
     }
