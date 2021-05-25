@@ -52,7 +52,7 @@ public class EmployeeService {
     public Employee findEmployeeById(long employeeID) throws Exception {
         List<Employee> employeeList = employeeRepository.findbyID(employeeID);
         if (employeeList.isEmpty()){
-            throw new Exception("No admin with ID "+employeeID+" found.");
+            throw new Exception("No employee with ID "+employeeID+" found.");
         }
         return employeeList.get(0);
     }
