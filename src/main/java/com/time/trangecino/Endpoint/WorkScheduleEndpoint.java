@@ -56,4 +56,21 @@ public class WorkScheduleEndpoint {
         return ResponseEntity.accepted().build();
     }
 
+    /*
+    @GetMapping
+    public List<WorkSchedule> getAllWorkSchedule(){
+        return WorkScheduleRepository.findAll();
+    }
+
+    @GetMapping
+    public List <WorkSchedule> getWorkScheduleFromUser (@PathVariable Long ID) {
+        return WorkScheduleRepository.findAllFromUser(ID);
+    }
+
+    @GetMapping(path = "/{ID}")
+    public Optional<WorkSchedule> getOneWorkSchedule(@PathVariable Long ID) {
+        return WorkScheduleRepository.findById(ID);
+        //optional means return the one workschedule, if there is none return null
+    }
+     */
 }
