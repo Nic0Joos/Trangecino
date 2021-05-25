@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="script" href="../assets/js/app.js">
+
 </head>
 
 <body>
@@ -51,7 +53,6 @@
                         <th>ID </th>
                         <th>Name </th>
                         <th>Email </th>
-                        <th>Mobile </th>
                         <th>Action </th>
                     </tr>
                     </thead>
@@ -70,7 +71,6 @@
                         <th>ID </th>
                         <th>Name </th>
                         <th>Email </th>
-                        <th>Mobile </th>
                         <th>Action </th>
                     </tr>
                     </thead>
@@ -92,11 +92,10 @@
                         <th>ID </th>
                         <th>Name </th>
                         <th>Email </th>
-                        <th>Mobile </th>
                         <th>Action </th>
                     </tr>
                     </thead>
-                    <tbody id="AdminTable">
+                    <tbody id="EmployeeTable">
                     </tbody>
                 </table>
 
@@ -134,6 +133,49 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+             $(loadData());
+
+                function loadData(){
+                    getAdmins(function(result){
+                        $("AdminTable").empty();
+                        $.each(result, function (i, item){
+                            $("AdminTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                           .append($("<td>").text(<a href=\"/admin/edit?id="><button class="btn btn-primary" type="button" style="background:var(--cyan);border-color: var(--info);"><strong>Edit</strong><br></button></a>) +
+                                            "</td></tr>")
+                                        )))));
+                        });
+                    });
+
+                   getHR(function(result){
+                        $("HRTable").empty();
+                        $.each(result, function (i, item){
+                           $("HRTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                               .append($("<td>").text( <a href=\"/HR/edit?id="><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong><br></button></a> +
+                                                "</td></tr>")
+                                       )))));
+                        });
+                    });
+
+                    Employee(function(result){
+                        $("EmployeeTable").empty();
+                        ("EmployeeTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                           .append($("<td>").text(<a href=\"/employee/edit?id="><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"><strong>Edit</strong><br></button></a>) +
+                                            "</td></tr>")
+                                       )))));
+                        });
+                    });
+                };
+
+        });
+
+
+    </script>
+
 </body>
+
+
 
 </html>

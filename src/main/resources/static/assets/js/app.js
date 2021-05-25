@@ -243,3 +243,13 @@
 
     }
 
+    getHR(function(result){
+                            $("HRTable").empty();
+                            $.each(result, function (i, item){
+                                $("HRTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                               .append($("<td>").text( <a href=\"/HR/edit?id="><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong><br></button></a> +
+                                                "</td></tr>")
+                                       )))));
+                            });
+                        });
+
