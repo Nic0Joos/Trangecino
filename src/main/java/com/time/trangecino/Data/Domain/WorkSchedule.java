@@ -15,6 +15,13 @@ public class WorkSchedule {
     private Time EndDay;
     private String Project;
 
+    /* "This workschedule then gets extracted at the service and endpoint, instead of startMorning, afternoon, etc. just startday and endday?
+    public WorkSchedule (Long ID, boolean StartDay, boolean EndDay, String Project) {
+        this.ID = ID;
+        this.StartDay = StartDay;
+        this.EndDay = EndDay;
+        this.Project = Project;
+    }*/
 
 //getter and setter for ID
 public Long getID(){ return ID;}
