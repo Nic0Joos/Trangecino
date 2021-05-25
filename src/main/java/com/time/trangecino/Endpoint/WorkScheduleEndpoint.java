@@ -53,30 +53,29 @@ public class WorkScheduleEndpoint {
     @DeleteMapping(path="/delete")
     public ResponseEntity<Void> deleteWorkschedule(WorkSchedule workSchedule){
         try {
-            workscheduleservice.deleteWorkSchedule(workSchedule.getID());
+            workscheduleservice.deleteWorkSchedule(workSchedule.getEmployee(), workSchedule.getdate());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
         return ResponseEntity.accepted().build();
     }
 
-   // all workschedules from all employees
+   // all workschedules from the logged-in employee
     @GetMapping
     public List<WorkSchedule> getAllWorkSchedule(){
-        return workScheduleRepository.findAll();
-    }
-
-    // all workschedules from one employee
-    @GetMapping
-    public List <WorkSchedule> getWorkScheduleFromUser (@PathVariable Long ID) {
-        return workScheduleRepository.findAllFromUser(ID);
+        return workscheduleservice.FindAllWorkSchedule();
     }
 
     // one workschedule from one employee
-    @GetMapping(path = "/{ID}")
-    public Optional<WorkSchedule> getOneWorkSchedule(@PathVariable Long ID) {
-        return workScheduleRepository.findbyID(ID);
-        //optional means return the one workschedule, if there is none return null
+    @GetMapping(path = "/{WorkScheduleID}")
+    public ResponseEntity<WorkSchedule> getOneWorkSchedule(@PathVariable Long WorkScheduleID) {
+        WorkSchedule workSchedule = null;
+        try {
+            workSchedule = workscheduleservice.FindOneWorkSchedule(WorkScheduleID);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+        return ResponseEntity.ok(workSchedule);
     }
 
 }
