@@ -1,10 +1,11 @@
 //Author Nico
 
-serviceEndpointURL = window.location.protocol + "//" + window.location.host;
+    var serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
     function register(email, password, companyname, surname, familyname){
         $.ajax({
         type: "POST",
+        contentType: "application/json",
         url: serviceEndpointURL + "admin/register",
         data: JSON.stringify({
             "email": email,
@@ -26,6 +27,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
     function login(email, password){
             $.ajax({
                 type: "POST",
+                contentType: "application/json",
                 url: serviceEndpointURL + "/login",
                 data: JSON.stringify({
                             "email": email,
@@ -45,6 +47,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
     function PostEmployee(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
+            contentType: "application/json",
             url: serviceEndpointURL + "/employee/create",
             data: JSON.stringify({
                 "surname": surname,
@@ -68,6 +71,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
     function PostHR(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
+            contentType: "application/json",
             url: serviceEndpointURL + "/HR/create",
             data: JSON.stringify({
                     "surname": surname,
@@ -79,7 +83,6 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
             success: function (data, textStatus, response) {
                                         callback(true);
-
                         },
             error: function (jqXHR, textStatus, errorThrown) {
                                         console.log(jqXHR, textStatus, errorThrown);
@@ -89,14 +92,15 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
             });
     }
 
-    function PostWorkSchedule(emploee, OutofOfficeSelect, date, projectname){
+    function PostWorkSchedule(emploee, OutOfOffice, date, projectname){
                 $.ajax({
                 type: "POST",
+                contentType: "application/json",
                 url: serviceEndpointURL + "/workschedule/create",
                 data: JSON.stringify({
 
                         "emploee": employee,
-                        "OutofOfficeSelect" : OutofOfficeSelect,
+                        "OutOfOffice" : OutOfOffice,
                         "date": date,
                         "projectname": projectname,
                 }),
