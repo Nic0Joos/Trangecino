@@ -26,21 +26,13 @@ public class WorkSchedule {
         this.Project = Project;
     }
 
-    //getter setter employee
-    public Employee getEmployee() {
-        return employee;
-    }
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
+    //getter and setter employee
+public Employee getEmployee() { return employee; }
+public void setEmployee(Employee employee) { this.employee = employee; }
 
-    public Long getWorkScheduleID() {
-        return WorkScheduleID;
-    }
-
-    public void setWorkScheduleID(Long workScheduleID) {
-        WorkScheduleID = workScheduleID;
-    }
+    //getter and setter WorkScheduleID
+public Long getWorkScheduleID() { return WorkScheduleID; }
+public void setWorkScheduleID(Long workScheduleID) { WorkScheduleID = workScheduleID; }
 
     //getter and setter for date
 public Date getdate() {return date;}
