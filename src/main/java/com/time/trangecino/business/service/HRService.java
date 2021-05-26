@@ -5,12 +5,13 @@ import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import javax.validation.Valid;
 import java.util.List;
 
 
 //Written by Alex
-//@Service
+@Service
 public class HRService {
 
 	@Autowired
