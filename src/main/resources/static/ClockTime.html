@@ -52,7 +52,7 @@
             <div class="col-md-12" style="margin-bottom: 0;">
                 <div class="table-responsive">
 
-                    <input id="ID" class="form-control form-control-lg" name="ID" type="text" placeholder="ID" readonly="" style="margin-top: 0px;margin-bottom: 20px;">
+                    <input id="ID" class="form-control form-control-lg" name="WorkscheduleID" type="text" placeholder="ID" readonly="" style="margin-top: 0px;margin-bottom: 20px;">
                     <table class="table">
                         <thead>
                             <tr>
@@ -124,7 +124,7 @@
              WorkscheduleID = getURLParameter('id');
                 if (WorkscheduleID !== null) {
                     getWorkschedule(WorkscheduleID, function(result){
-                        $('input[name=ID]').val(result["id"]);
+                        $('input[name=WorkscheduleID]').val(result["WorkscheduleID"]);
                         $('input[name=StartMorning]').val(result["StartMorning"]);
                         $('input[name=Lunch]').val(result["Lunch"]);
                         $('input[name=StartAfternoon]').val(result["StartAfternoon"]);
@@ -133,7 +133,7 @@
                 }
 
              $(#EnterBtn).click(function (event) {
-               putWorkschedule($('input[ID=ID]').val(), $('input[StartMorning=StartMorning]').val(), $('input[Lunch=Lunch]').val(), $('input[StartAfternoon=StartAfternoon]').val(),
+               putWorkschedule($('input[WorkscheduleID=WorkscheduleID]').val(), $('input[StartMorning=StartMorning]').val(), $('input[Lunch=Lunch]').val(), $('input[StartAfternoon=StartAfternoon]').val(),
                         $('input[EndDay=EndDay]').val(),
                         )});
 

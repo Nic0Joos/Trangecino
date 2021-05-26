@@ -142,8 +142,8 @@
                     getAdmins(function(result){
                         $("AdminTable").empty();
                         $.each(result, function (i, item){
-                            $("AdminTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
-                                           .append(<a href="EditAdmin.html" + "?id=" + item.id><button class="btn btn-primary" type="button" style="background:var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
+                            $("AdminTable").append($("<tr>").append($("<td>").text(item.AdminID).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                           .append(<a href="EditAdmin.html" + "?id=" + item.AdminID><button class="btn btn-primary" type="button" style="background:var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
                                             "</td></tr>")
                                         )))));
                         });
@@ -152,8 +152,8 @@
                    getHR(function(result){
                         $("HRTable").empty();
                         $.each(result, function (i, item){
-                           $("HRTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
-                                               .append(<a href="EditHR.html" + "?id=" + item.id ><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong></button></a> +
+                           $("HRTable").append($("<tr>").append($("<td>").text(item.HRID).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                               .append(<a href="EditHR.html" + "?id=" + item.HRID ><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong></button></a> +
                                                 "</td></tr>")
                                        )))));
                         });
@@ -161,8 +161,8 @@
 
                     Employee(function(result){
                         $("EmployeeTable").empty();
-                        ("EmployeeTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
-                                           .append(<a href="EditEmployee.html" + "?id=" + item.id><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
+                        ("EmployeeTable").append($("<tr>").append($("<td>").text(item.EmployeeID).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                           .append(<a href="EditEmployee.html" + "?id=" + item.EmployeeID><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
                                             "</td></tr>")
                                        )))));
                         });
