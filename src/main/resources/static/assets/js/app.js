@@ -250,7 +250,7 @@
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
-                url: serviceEndpointURL + "HR/change"
+                url: serviceEndpointURL + "HR/edit"
                 data: JSON.stringify({
                     "id": ID,
                     "email": email,
@@ -272,7 +272,7 @@
                 $.ajax({
                     type: "PUT",
                     contentType: "application/json",
-                    url: serviceEndpointURL + "employee/change"
+                    url: serviceEndpointURL + "employee/edit"
                     data: JSON.stringify({
                         "id": ID,
                         "email": email,
@@ -294,7 +294,7 @@
         $.ajax({
             type: "PUT",
             contentType: "application/json",
-            url: serviceEndpointURL + "admin/change"
+            url: serviceEndpointURL + "admin/edit"
             data: JSON.stringify({
                 "id": ID,
                 "email": email,
@@ -317,7 +317,7 @@
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
-                url: serviceEndpointURL + "workschedule/change"
+                url: serviceEndpointURL + "workschedule/edit"
                 data: JSON.stringify({
                     "id": ID,
                     "StartMorning": StartMorning,
