@@ -7,7 +7,7 @@ import javax.validation.constraints.Email;
 
 //Written by Alex
 @Entity
-public class HR extends User {
+public class HR {
     @Id
     @GeneratedValue
     protected Long ID;
