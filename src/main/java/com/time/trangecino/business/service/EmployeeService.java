@@ -24,7 +24,7 @@ public class EmployeeService {
 
     //add and save employee
     public void addEmployee(@Valid Employee employee) throws Exception {
-        if (employee.getEmployeeID() == null) {
+        if (employee.getID() == null) {
             if (employeeRepository.findByEmail(employee.getEmail()) != null) {
                 throw new Exception("Please enter a new email address");
             }
@@ -35,7 +35,7 @@ public class EmployeeService {
 
     //edit employee
     public Employee editEmployee(@Valid Employee employee) throws Exception {
-        if (employee.getEmployeeID() == null) {
+        if (employee.getID() == null) {
             throw new Exception("No employee found");
         } else {
             return employeeRepository.save(employee);

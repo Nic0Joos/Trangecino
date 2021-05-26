@@ -14,7 +14,7 @@ import java.util.List;
 public class Employee {
     @Id
     @GeneratedValue
-    protected Long EmployeeID;
+    protected Long ID;
     @Email
     protected String email;
     protected String password;
@@ -32,8 +32,8 @@ public class Employee {
         Workschedule = workschedule;
     }
 
-    public Long getEmployeeID() { return EmployeeID; }
-    public void setEmployeeID(Long EmployeeID) { this.EmployeeID = EmployeeID; }
+    public Long getID() { return ID; }
+    public void setID(Long EmployeeID) { this.ID = EmployeeID; }
 
     public String getEmail() {
         return email;

@@ -11,5 +11,5 @@ import java.util.List;
 //written by Kaan
 @Repository
 public interface WorkScheduleRepository extends JpaRepository<WorkSchedule, Long> {
-    List <WorkSchedule> findByEmployeeId (Long EmployeeID);
+    List<WorkSchedule> findByEmployeeID (Long EmployeeID);
 }
