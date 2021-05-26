@@ -12,14 +12,14 @@ import java.util.List;
 //Written by Alex
 
 @RestController
-@RequestMapping(path= "/HR")
+@RequestMapping(path= "/api")
 public class HREndpoint {
 
     @Autowired
-    private HRService HRService;
+    HRService HRService;
 
     //add HR - Endpoint
-    @PostMapping(path = "/create")
+    @PostMapping(path = "/HR", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> postHR(@RequestBody HR HR) {
         try {
             HRService.addHR(HR);
@@ -30,7 +30,7 @@ public class HREndpoint {
     }
 
     //edit HR - Endpoint
-    @PutMapping(path ="/edit")
+    @PutMapping(path = "/HR/{HRID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> editHR(@RequestBody HR HR){
         try {
             HRService.editHR(HR);
@@ -41,7 +41,7 @@ public class HREndpoint {
     }
 
     //delete HR - Endpoint
-    @DeleteMapping(path="/delete")
+    @DeleteMapping(path = "/HR/{HRID}")
     public ResponseEntity<Void> deleteHR(HR HR){
         try {
             HRService.deleteHR(HR.getHRID());

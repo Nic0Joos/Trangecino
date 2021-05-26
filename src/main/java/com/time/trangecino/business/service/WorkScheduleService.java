@@ -1,25 +1,26 @@
 package com.time.trangecino.business.service;
 
-import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Data.Domain.WorkSchedule;
 import com.time.trangecino.Repository.WorkScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
-import java.util.Date;
 import java.util.List;
 
 //written by Kaan
 
 @Service
+@Validated
 public class WorkScheduleService {
 
     @Autowired
-    private WorkScheduleRepository workschedulerepository;
+    WorkScheduleRepository workschedulerepository;
     @Autowired
-    private WorkSchedule workschedule;
+    WorkSchedule workschedule;
     @Autowired
-    private EmployeeService employeeService;
+    EmployeeService employeeService;
 
 
     // create workschedule - possible if statement to be added
@@ -34,8 +35,8 @@ public class WorkScheduleService {
     }
 
     //delete workschedule
-    public void deleteWorkSchedule (Employee employee, Date date){
-        workschedulerepository.deleteByEmployeeAndDate(employee, date);
+    public void deleteWorkSchedule (Long WorkscheduleID){
+        workschedulerepository.deleteById(WorkscheduleID);
     }
 
     // find all Workschedules from the logged-in employee
@@ -43,12 +44,8 @@ public class WorkScheduleService {
         return workschedulerepository.findAllbyEmployeeID(employeeService.getCurrentEmployee().getEmployeeID());
     }
     // find one workschedule from a specific employee
-    public WorkSchedule FindOneWorkSchedule(Long WorkScheduleID) throws Exception {
-        List <WorkSchedule> WorkScheduleList = workschedulerepository.findOneWorkSchedule(WorkScheduleID);
-        if (WorkScheduleList.isEmpty()){
-            throw new Exception("No Workschedule found.");
-        }
-        return WorkScheduleList.get(0);
+    public WorkSchedule FindOneWorkSchedule(Long WorkScheduleID) {
+       return workschedulerepository.findById(WorkScheduleID).get();
     }
 
       /*public enum WorkingDaysStatus {

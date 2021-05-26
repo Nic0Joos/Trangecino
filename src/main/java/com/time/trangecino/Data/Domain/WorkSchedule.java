@@ -9,7 +9,7 @@ import java.util.Date;
 public class WorkSchedule {
     @Id
     @GeneratedValue
-    private Long WorkScheduleID;
+    private Long WorkscheduleID;
     private Date date;
     private boolean OutOfOffice;
     private Time StartMorning;
@@ -35,8 +35,8 @@ public Employee getEmployee() { return employee; }
 public void setEmployee(Employee employee) { this.employee = employee; }
 
 //getter and setter WorkScheduleID
-public Long getWorkScheduleID() { return WorkScheduleID; }
-public void setWorkScheduleID(Long workScheduleID) { WorkScheduleID = workScheduleID; }
+public Long getWorkscheduleID() { return WorkscheduleID; }
+public void setWorkscheduleID(Long workscheduleID) { WorkscheduleID = workscheduleID; }
 
 //getter and setter for date
 public Date getdate() {return date;}

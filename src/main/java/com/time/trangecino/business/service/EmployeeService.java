@@ -6,18 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
 //Written by Luca Weisskopf
 @Service
+@Validated
 public class EmployeeService {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    EmployeeRepository employeeRepository;
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    PasswordEncoder passwordEncoder;
 
     //add and save employee
     public void addEmployee(@Valid Employee employee) throws Exception {

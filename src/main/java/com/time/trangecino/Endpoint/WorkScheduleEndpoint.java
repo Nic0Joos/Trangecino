@@ -1,7 +1,6 @@
 package com.time.trangecino.Endpoint;
 
 import com.time.trangecino.Data.Domain.WorkSchedule;
-import com.time.trangecino.Repository.WorkScheduleRepository;
 import com.time.trangecino.business.service.WorkScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,16 +14,13 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(path= "/WorkSchedule")
+@RequestMapping(path= "/api")
 public class WorkScheduleEndpoint {
     @Autowired
-    private WorkScheduleService workscheduleservice;
-    @Autowired
-    private WorkScheduleRepository workScheduleRepository;
-
+    WorkScheduleService workscheduleservice;
 
     //create a workscheduleplan, POSTMap
-    @PostMapping(path = "/create")
+    @PostMapping(path = "/Workschedule", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> createWorkschedule(@RequestBody WorkSchedule workschedule) {
         try {
          workscheduleservice.createWorkschedule(workschedule);
@@ -35,7 +31,7 @@ public class WorkScheduleEndpoint {
     }
 
     //edit a workscheduleplan, PUTMap
-    @PutMapping(path ="/edit")
+    @PutMapping(path = "/Workschedule/{WorkscheduleID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> editWorkschedule(@RequestBody WorkSchedule workSchedule){
         try {
             workscheduleservice.editWorkschedule(workSchedule);
@@ -46,10 +42,10 @@ public class WorkScheduleEndpoint {
     }
 
     //delete a workscheduleplan, DELETEMap
-    @DeleteMapping(path="/delete")
+    @DeleteMapping(path = "/Workschedule/{WorkscheduleID}")
     public ResponseEntity<Void> deleteWorkschedule(WorkSchedule workSchedule){
         try {
-            workscheduleservice.deleteWorkSchedule(workSchedule.getEmployee(), workSchedule.getdate());
+            workscheduleservice.deleteWorkSchedule(workSchedule.getWorkscheduleID());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
@@ -57,17 +53,17 @@ public class WorkScheduleEndpoint {
     }
 
    // all workschedules from the logged-in employee
-    @GetMapping
+    @GetMapping (path = "/Workschedule", produces = "application/json")
     public List<WorkSchedule> getAllWorkSchedule(){
         return workscheduleservice.FindAllWorkSchedule();
     }
 
     // one workschedule from one employee
-    @GetMapping(path = "/{WorkScheduleID}")
-    public ResponseEntity<WorkSchedule> getOneWorkSchedule(@PathVariable Long WorkScheduleID) {
+    @GetMapping(path = "/Workschedule/{WorkscheduleID}", produces = "application/json")
+    public ResponseEntity<WorkSchedule> getOneWorkSchedule(@PathVariable Long WorkscheduleID) {
         WorkSchedule workSchedule = null;
         try {
-            workSchedule = workscheduleservice.FindOneWorkSchedule(WorkScheduleID);
+            workSchedule = workscheduleservice.FindOneWorkSchedule(WorkscheduleID);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }

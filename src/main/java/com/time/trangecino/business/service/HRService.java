@@ -5,6 +5,7 @@ import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -12,13 +13,14 @@ import java.util.List;
 
 //Written by Alex
 @Service
+@Validated
 public class HRService {
 
 	@Autowired
-	private HRRepository HRRepository;
+	HRRepository HRRepository;
 
 	@Autowired
-	private PasswordEncoder passwordEncoder;
+	PasswordEncoder passwordEncoder;
 
 	//add and save HR
 	public void addHR(@Valid HR HR) throws Exception {

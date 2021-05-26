@@ -13,13 +13,13 @@ import java.util.List;
 //written by Luca Weisskopf
 
 @RestController
-@RequestMapping(path= "/employee")
+@RequestMapping(path= "/api")
 public class EmployeeEndpoint {
     @Autowired
-    private EmployeeService employeeService;
+    EmployeeService employeeService;
 
     //add employee - Endpoint
-    @PostMapping(path = "/create")
+    @PostMapping(path = "/Employee", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> postEmployee(@RequestBody Employee employee) {
         try {
             employeeService.addEmployee(employee);
@@ -30,7 +30,7 @@ public class EmployeeEndpoint {
     }
 
     //edit employee - Endpoint
-    @PutMapping(path ="/edit")
+    @PutMapping(path = "/Employee/{EmployeeID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> editEmployee(@RequestBody Employee employee){
         try {
             employeeService.editEmployee(employee);
@@ -41,7 +41,7 @@ public class EmployeeEndpoint {
     }
 
     //delete employee - Endpoint
-    @DeleteMapping(path="/delete")
+    @DeleteMapping(path = "/Employee/{EmployeeID}")
     public ResponseEntity<Void> deleteEmployee(Employee employee){
         try {
             employeeService.deleteEmployee(employee.getEmployeeID());
@@ -52,17 +52,17 @@ public class EmployeeEndpoint {
     }
 
     //get all employees - Endpoint
-    @GetMapping(path = "/employee", produces = "application/json")
+    @GetMapping(path = "/Employee", produces = "application/json")
     public List<Employee> getEmployee() {
         return employeeService.findAllEmployees();
     }
 
     //get one specific employee - Endpoint
-    @GetMapping(path = "/employee/{employeeId}", produces = "application/json")
-    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "employeeId") String employeeId) {
+    @GetMapping(path = "/Employee/{EmployeeID}", produces = "application/json")
+    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "EmployeeId") String EmployeeID) {
         Employee employee = null;
         try {
-            employee = employeeService.findEmployeeById(Long.parseLong(employeeId));
+            employee = employeeService.findEmployeeById(Long.parseLong(EmployeeID));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }

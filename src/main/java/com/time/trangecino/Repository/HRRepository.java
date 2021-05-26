@@ -11,6 +11,4 @@ import org.springframework.stereotype.Repository;
 public interface HRRepository extends JpaRepository<HR, Long> {
 
      String findByEmail(String email);
-     void deleteById(HR ID);
-
 }

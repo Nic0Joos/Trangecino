@@ -19,7 +19,7 @@ public class AdminService {
     AdminRepository adminRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    PasswordEncoder passwordEncoder;
 
     //register Admin
     public void registerAdmin(@Validated Admin admin) throws Exception {
@@ -42,7 +42,7 @@ public class AdminService {
     }
 
     //delete Admin
-    public void deleteAdmin (Long adminID) { adminRepository.deleteById(adminID);
+    public void deleteAdmin (Long AdminID) { adminRepository.deleteById(AdminID);
         }
 
      //find Admins
@@ -50,8 +50,8 @@ public class AdminService {
         return adminRepository.findAll();
     }
     //find one Admin
-    public Admin findAdminById(long adminID) {
-        return adminRepository.findById(adminID).get();
+    public Admin findAdminById(Long AdminID) {
+        return adminRepository.findById(AdminID).get();
     }
 }
 

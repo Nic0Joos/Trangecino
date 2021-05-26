@@ -13,14 +13,14 @@ import java.util.List;
 //written by Lennart
 
 @RestController
-@RequestMapping(path= "/Admin")
+@RequestMapping(path= "/api")
 public class AdminEndpoint {
 
     @Autowired
-    private AdminService adminService;
+    AdminService adminService;
 
     //add Admin - Endpoint
-    @PostMapping(path = "/create")
+    @PostMapping(path = "/Admin", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> postAdmin(@RequestBody Admin admin) {
         try {
             adminService.registerAdmin(admin);
@@ -31,7 +31,7 @@ public class AdminEndpoint {
     }
 
     //edit Admin - Endpoint
-    @PutMapping(path ="/edit")
+    @PutMapping(path = "/Admin/{AdminID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> editAdmin(@RequestBody Admin admin){
         try {
             adminService.editAdmin(admin);
@@ -42,7 +42,7 @@ public class AdminEndpoint {
     }
 
     //delete Admin - Endpoint
-    @DeleteMapping(path="/delete")
+    @DeleteMapping(path = "/Admin/{AdminID}")
     public ResponseEntity<Void> deleteAdmin(Admin admin){
         try {
             adminService.deleteAdmin(admin.getAdminID());
@@ -52,16 +52,16 @@ public class AdminEndpoint {
         return ResponseEntity.accepted().build();
     }
     //get all Admins
-    @GetMapping(path = "/admin", produces = "application/json")
+    @GetMapping(path = "/Admin", produces = "application/json")
     public List<Admin> getAdmins() {
         return adminService.findAllAdmins();
     }
     //get specific Admin
-    @GetMapping(path = "/admin/{adminId}", produces = "application/json")
-    public ResponseEntity<Admin> getAdmin(@PathVariable(value = "adminId") String adminId) {
+    @GetMapping(path = "/Admin/{AdminID}", produces = "application/json")
+    public ResponseEntity<Admin> getAdmin(@PathVariable(value = "AdminID") String AdminID) {
         Admin admin = null;
         try {
-            admin = adminService.findAdminById(Long.parseLong(adminId));
+            admin = adminService.findAdminById(Long.parseLong(AdminID));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
