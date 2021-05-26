@@ -230,26 +230,116 @@
                     });
                 }
 
-    function postHR(){
+    function GetWorkschedule(WorkscheduleID, callback){
+                    $.ajax({
+                        type: "GET",
+                        datatype: "json",
+                        url: serviceEndpointURL + "/Workschedule" + WorkscheduleID,
+
+                        success: function(data, textStatus, response) {
+                            callback(data);
+                        },
+
+                        error: function(jqXHR, textStatus, errorThrown){
+                            console.log(jqXHR, textStatus, errorThrown);
+                        },
+                    });
+                }
+
+    function putHR(ID, email, password, surname, familyname, callback ){
+            $.ajax({
+                type: "PUT",
+                contentType: "application/json",
+                url: serviceEndpointURL + "HR/edit"
+                data: JSON.stringify({
+                    "id": ID,
+                    "email": email,
+                    "password": password,
+                    "surname": surname,
+                    "familyname": familyname
+                }),
+                success: function(data, textStatus, response){
+                    callback(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+            });
+
+        }
+
+    function putEmployee(ID, email, password, surname, familyname, callback ){
+                $.ajax({
+                    type: "PUT",
+                    contentType: "application/json",
+                    url: serviceEndpointURL + "employee/edit"
+                    data: JSON.stringify({
+                        "id": ID,
+                        "email": email,
+                        "password": password,
+                        "surname": surname,
+                        "familyname": familyname
+                    }),
+                    success: function(data, textStatus, response){
+                        callback(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR, textStatus, errorThrown);
+                    },
+                });
+
+            }
+
+    function putAdmin(ID, email, password, companyname, surname, familyname,callback ){
+        $.ajax({
+            type: "PUT",
+            contentType: "application/json",
+            url: serviceEndpointURL + "admin/edit"
+            data: JSON.stringify({
+                "id": ID,
+                "email": email,
+                "password": password,
+                "companyname": companyname,
+                "surname": surname,
+                "familyname": familyname
+            }),
+            success: function(data, textStatus, response){
+                callback(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR, textStatus, errorThrown);
+            },
+        });
 
     }
 
-    function postEmployee(){
+    function putWorkschedule(ID, StartMorning, Lunch, StartAfternoon, EndDay, callback ){
+            $.ajax({
+                type: "PUT",
+                contentType: "application/json",
+                url: serviceEndpointURL + "workschedule/edit"
+                data: JSON.stringify({
+                    "id": ID,
+                    "StartMorning": StartMorning,
+                    "Lunch": Lunch,
+                    "StartAfternoon": StartAfternoon,
+                    "EndDay": EndDay
+                }),
+                success: function(data, textStatus, response){
+                    callback(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+            });
 
+        }
+
+    //Copied from Andreas Martin: https://github.com/DigiPR/digipr-acrm
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
     }
 
-    function postAdmin(){
 
 
-    }
-
-    getHR(function(result){
-                            $("HRTable").empty();
-                            $.each(result, function (i, item){
-                                $("HRTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
-                                               .append($("<td>").text( <a href=\"/HR/edit?id="><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong><br></button></a> +
-                                                "</td></tr>")
-                                       )))));
-                            });
-                        });
 
