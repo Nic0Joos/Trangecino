@@ -1,6 +1,11 @@
 package com.time.trangecino.Data.Domain;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.sql.Time;
 import java.util.Date;
 
@@ -9,16 +14,17 @@ import java.util.Date;
 public class WorkSchedule {
     @Id
     @GeneratedValue
-    private Long WorkscheduleID;
-    private Date date;
-    private boolean OutOfOffice;
-    private Time StartMorning;
-    private Time Lunch;
-    private Time StartAfternoon;
-    private Time EndDay;
-    private String Project;
-    @OneToOne
-    private Employee employee;
+    protected Long WorkscheduleID;
+    protected Date date;
+    protected boolean OutOfOffice;
+    protected Time StartMorning;
+    protected Time Lunch;
+    protected Time StartAfternoon;
+    protected Time EndDay;
+    protected String Project;
+    @ManyToOne
+    @JsonIgnore
+    protected Employee employee;
 
    // ...
     public WorkSchedule (Date date, Time StartMorning, Time Lunch, Time StartAfternoon, Time EndDay, String Project) {
@@ -30,7 +36,11 @@ public class WorkSchedule {
         this.Project = Project;
     }
 
-//getter and setter Employee
+    public WorkSchedule() {
+
+    }
+
+    //getter and setter Employee
 public Employee getEmployee() { return employee; }
 public void setEmployee(Employee employee) { this.employee = employee; }
 

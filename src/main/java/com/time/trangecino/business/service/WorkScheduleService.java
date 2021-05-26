@@ -18,8 +18,6 @@ public class WorkScheduleService {
     @Autowired
     WorkScheduleRepository workschedulerepository;
     @Autowired
-    WorkSchedule workschedule;
-    @Autowired
     EmployeeService employeeService;
 
 
@@ -41,7 +39,7 @@ public class WorkScheduleService {
 
     // find all Workschedules from the logged-in employee
     public List<WorkSchedule> FindAllWorkSchedule (){
-        return workschedulerepository.findAllbyEmployeeID(employeeService.getCurrentEmployee().getEmployeeID());
+        return workschedulerepository.findByEmployeeID(employeeService.getCurrentEmployee().getID());
     }
     // find one workschedule from a specific employee
     public WorkSchedule FindOneWorkSchedule(Long WorkScheduleID) {
@@ -56,9 +54,6 @@ public class WorkScheduleService {
 
 
 
- public boolean areUWorking() {
-      return workschedule.getOutOfOffice();
- }
 
 
     private void getWorkingDaysStatus() {

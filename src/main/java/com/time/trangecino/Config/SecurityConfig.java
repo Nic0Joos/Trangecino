@@ -19,11 +19,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("employee1").password(passwordEncoder().encode("employee1Pass"))
+                .withUser("employee1").password(passwordEncoder().encode("employee1Pass")).roles("USER")
                 .and()
-                .withUser("HR1").password(passwordEncoder().encode("HR2Pass"))
+                .withUser("HR1").password(passwordEncoder().encode("HR2Pass")).roles("USER")
                 .and()
-                .withUser("admin1").password(passwordEncoder().encode("adminPass"));
+                .withUser("admin1").password(passwordEncoder().encode("adminPass")).roles("ADMIN");
     }
 
     //authorizing requests, redirect to html page
