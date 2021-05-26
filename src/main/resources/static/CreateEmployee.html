@@ -92,6 +92,13 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
     <script language="JavaScript">
+        validateLogin(function (result) {
+            if (!result) {
+                window.location.replace("/login");
+            } $("#LoginBtn").hide();
+        });
+    </script>
+    <script language="JavaScript">
         $(document).ready(function () {
                $(#saveBtn).click(function (event) {
                    PostEmployee($('input[surname=surname]').val(), $('input[email=email]').val(), $('input[password=password]').val(),
