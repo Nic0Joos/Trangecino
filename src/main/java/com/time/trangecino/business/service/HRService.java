@@ -4,7 +4,6 @@ import com.time.trangecino.Data.Domain.HR;
 import com.time.trangecino.Repository.HRRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 import javax.validation.Valid;
 import java.util.List;
 
