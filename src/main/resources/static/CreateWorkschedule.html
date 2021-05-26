@@ -129,10 +129,11 @@
                     }
 
 
-               $(#saveBtn).click(function (event) {
+               $("#saveBtn").click(function (event) {
                    PostWorkSchedule($("EmployeeSelect").val(), $("OutOfOffice").val(), $('input[date=date]').val(), $('input[projectname=projectname]').val(),
-                            });
-             });
+                            );
+               });
+            });
     </script>
 
 </body>

@@ -102,18 +102,18 @@
              $(loadData());
 
                function loadData(){
-                    getWorkschedules( function(result) ){
+                    getWorkschedules( function(result) {
                         $.each(result, function (i, item){
-                            $("WorkscheduleTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.date).
-                                           .append($("<td>").text(<a href="ClockTime.html" + "/edit?id=" + item.WorkscheduleID><button class="btn btn-primary" type="button" style="background:var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
+                            $("WorkscheduleTable").append($("<tr>").append($("<td>").text(item.WorkscheduleID).append($("<td>").text(item.date)
+                                .append($(<a href="EditHR.html?id= + item.HRID" ><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong></button></a> +
                                             "</td></tr>")
-                                        )))));
+                                        ))));
                         });
-                    }
+                    });
 
 
-               }
-       }
+               };
+       });
 
 
 
