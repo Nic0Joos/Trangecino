@@ -1,9 +1,11 @@
 package com.time.trangecino.Data.Domain;
 
+import javax.persistence.Entity;
 import java.sql.Time;
 import java.util.Date;
 
 //written by Kaan
+@Entity
 public class WorkSchedule {
 
     private Long WorkScheduleID;

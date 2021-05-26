@@ -246,13 +246,13 @@
                     });
                 }
 
-    function putHR(ID, email, password, surname, familyname, callback ){
+    function putHR(HRID, email, password, surname, familyname, callback ){
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
                 url: serviceEndpointURL + "HR/edit"
                 data: JSON.stringify({
-                    "id": ID,
+                    "HRID": HRID,
                     "email": email,
                     "password": password,
                     "surname": surname,
@@ -268,13 +268,13 @@
 
         }
 
-    function putEmployee(ID, email, password, surname, familyname, callback ){
+    function putEmployee(EmployeeID, email, password, surname, familyname, callback ){
                 $.ajax({
                     type: "PUT",
                     contentType: "application/json",
                     url: serviceEndpointURL + "employee/edit"
                     data: JSON.stringify({
-                        "id": ID,
+                        "EmployeeID": EmployeeID,
                         "email": email,
                         "password": password,
                         "surname": surname,
@@ -290,13 +290,13 @@
 
             }
 
-    function putAdmin(ID, email, password, companyname, surname, familyname,callback ){
+    function putAdmin(AdminID, email, password, companyname, surname, familyname,callback ){
         $.ajax({
             type: "PUT",
             contentType: "application/json",
             url: serviceEndpointURL + "admin/edit"
             data: JSON.stringify({
-                "id": ID,
+                "AdminID": AdminID,
                 "email": email,
                 "password": password,
                 "companyname": companyname,
@@ -313,13 +313,13 @@
 
     }
 
-    function putWorkschedule(ID, StartMorning, Lunch, StartAfternoon, EndDay, callback ){
+    function putWorkschedule(WorkscheduleID, StartMorning, Lunch, StartAfternoon, EndDay, callback ){
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
                 url: serviceEndpointURL + "workschedule/edit"
                 data: JSON.stringify({
-                    "id": ID,
+                    "WorkscheduleID": WorkscheduleID,
                     "StartMorning": StartMorning,
                     "Lunch": Lunch,
                     "StartAfternoon": StartAfternoon,
