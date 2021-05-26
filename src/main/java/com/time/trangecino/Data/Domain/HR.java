@@ -10,15 +10,15 @@ import javax.validation.constraints.Email;
 public class HR {
     @Id
     @GeneratedValue
-    protected Long ID;
+    protected Long HRID;
     @Email
     protected String email;
     protected String password;
     protected String name;
     protected String familyname;
 
-    public Long getID() { return ID; }
-    public void setID(Long ID) { this.ID = ID; }
+    public Long getHRID() { return HRID; }
+    public void setHRID(Long ID) { this.HRID = ID; }
 
     public String getEmail() {
         return email;
