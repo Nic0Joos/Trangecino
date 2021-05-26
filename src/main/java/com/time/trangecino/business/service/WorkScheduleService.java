@@ -1,6 +1,5 @@
 package com.time.trangecino.business.service;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Data.Domain.WorkSchedule;
 import com.time.trangecino.Repository.WorkScheduleRepository;
@@ -41,7 +40,7 @@ public class WorkScheduleService {
 
     // find all Workschedules from the logged-in employee
     public List<WorkSchedule> FindAllWorkSchedule (){
-        return workschedulerepository.findAllbyEmployeeID(employeeService.getCurrentEmployee().getID());
+        return workschedulerepository.findAllbyEmployeeID(employeeService.getCurrentEmployee().getEmployeeID());
     }
     // find one workschedule from a specific employee
     public WorkSchedule FindOneWorkSchedule(Long WorkScheduleID) throws Exception {

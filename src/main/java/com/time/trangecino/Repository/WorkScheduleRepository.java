@@ -1,6 +1,6 @@
 package com.time.trangecino.Repository;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
+
 import com.time.trangecino.Data.Domain.Employee;
 import com.time.trangecino.Data.Domain.WorkSchedule;
 import org.springframework.data.jpa.repository.JpaRepository;
