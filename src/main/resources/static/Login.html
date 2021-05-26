@@ -91,7 +91,13 @@
     <script>
         $(document).ready(function () {
                $(#saveBtn).click(function (event) {
-                   login($('input[email=email]').val(), $('input[password=password]').val(),
+                   login($('input[email=email]').val(), $('input[password=password]').val(), function(result) {
+                        if(result) {
+                            window.location.replace("../");
+                        } else if {
+                            window.alert("Something went wrong");
+                        }
+                   }
                             );
                    });
                });
