@@ -230,7 +230,23 @@
                     });
                 }
 
-    function postHR(ID, email, password, surname, familyname, callback ){
+    function GetWorkschedule(WorkscheduleID, callback){
+                    $.ajax({
+                        type: "GET",
+                        datatype: "json",
+                        url: serviceEndpointURL + "/Workschedule" + WorkscheduleID,
+
+                        success: function(data, textStatus, response) {
+                            callback(data);
+                        },
+
+                        error: function(jqXHR, textStatus, errorThrown){
+                            console.log(jqXHR, textStatus, errorThrown);
+                        },
+                    });
+                }
+
+    function putHR(ID, email, password, surname, familyname, callback ){
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
@@ -252,7 +268,7 @@
 
         }
 
-    function postEmployee(ID, email, password, surname, familyname, callback ){
+    function putEmployee(ID, email, password, surname, familyname, callback ){
                 $.ajax({
                     type: "PUT",
                     contentType: "application/json",
@@ -274,7 +290,7 @@
 
             }
 
-    function postAdmin(ID, email, password, companyname, surname, familyname,callback ){
+    function putAdmin(ID, email, password, companyname, surname, familyname,callback ){
         $.ajax({
             type: "PUT",
             contentType: "application/json",
@@ -296,6 +312,28 @@
         });
 
     }
+
+    function putWorkschedule(ID, StartMorning, Lunch, StartAfternoon, EndDay, callback ){
+            $.ajax({
+                type: "PUT",
+                contentType: "application/json",
+                url: serviceEndpointURL + "workschedule/change"
+                data: JSON.stringify({
+                    "id": ID,
+                    "StartMorning": StartMorning,
+                    "Lunch": Lunch,
+                    "StartAfternoon": StartAfternoon,
+                    "EndDay": EndDay
+                }),
+                success: function(data, textStatus, response){
+                    callback(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+            });
+
+        }
 
     //Copied from Andreas Martin: https://github.com/DigiPR/digipr-acrm
     function getURLParameter(name) {
