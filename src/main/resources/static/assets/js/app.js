@@ -105,14 +105,14 @@
             });
     }
 
-    function PostWorkSchedule(emploee, OutOfOffice, date, projectname){
+    function PostWorkSchedule(employee, OutOfOffice, date, projectname){
                 $.ajax({
                 type: "POST",
                 contentType: "application/json",
                 url: serviceEndpointURL + "/workschedule/create",
                 data: JSON.stringify({
 
-                        "emploee": employee,
+                        "employee": employee,
                         "OutOfOffice" : OutOfOffice,
                         "date": date,
                         "projectname": projectname,
@@ -147,11 +147,11 @@
         });
     }
 
-    function GetEmployee(employeeID, callback){
+    function GetEmployee(EmployeeID, callback){
             $.ajax({
                 type: "GET",
                 datatype: "json",
-                url: serviceEndpointURL + "/customer" + employeeID,
+                url: serviceEndpointURL + "/customer" + EmployeeID,
 
                 success: function(data, textStatus, response) {
                     callback(data);

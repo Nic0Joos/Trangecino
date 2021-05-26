@@ -1,13 +1,16 @@
 package com.time.trangecino.Data.Domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
 
 //written by Kaan
 @Entity
 public class WorkSchedule {
-
+    @Id
+    @GeneratedValue
     private Long WorkScheduleID;
     private Date date;
     private boolean OutOfOffice;
