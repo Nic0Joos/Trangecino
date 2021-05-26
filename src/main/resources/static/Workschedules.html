@@ -90,7 +90,13 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
+    <script language="JavaScript">
+        validateLogin(function (result) {
+            if (!result) {
+                window.location.replace("/login");
+            } $("#LoginBtn").hide();
+        });
+    </script>
     <script>
         $(document).ready(function(){
              $(loadData());

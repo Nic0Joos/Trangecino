@@ -18,7 +18,7 @@ public class HR {
     protected String familyname;
 
     public Long getHRID() { return HRID; }
-    public void setHRID(Long ID) { this.HRID = HRID; }
+    public void setHRID(Long ID) { this.HRID = ID; }
 
     public String getEmail() {
         return email;

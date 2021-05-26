@@ -22,7 +22,7 @@ public class HRService {
 
 	//add and save HR
 	public void addHR(@Valid HR HR) throws Exception {
-		if (HR.getID() == null) {
+		if (HR.getHRID() == null) {
 			if (HRRepository.findByEmail(HR.getEmail()) != null) {
 				throw new Exception("Please enter a new email address");
 			}
@@ -33,7 +33,7 @@ public class HRService {
 
 	//edit HR
 	public HR editHR(@Valid HR HR) throws Exception {
-		if (HR.getID() == null) {
+		if (HR.getHRID() == null) {
 			throw new Exception("No HR found");
 		} else {
 			return HRRepository.save(HR);
