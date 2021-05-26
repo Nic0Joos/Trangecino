@@ -23,7 +23,7 @@ public class AdminService {
 
     //register Admin
     public void registerAdmin(@Validated Admin admin) throws Exception {
-        if (admin.getID() == null) {
+        if (admin.getAdminID() == null) {
             if (adminRepository.findbyEmail(admin.getEmail()) != null) ;
 
             throw new Exception("Email address " + admin.getEmail() + "already assigned to another Admin.");
@@ -34,7 +34,7 @@ public class AdminService {
     }
     //edit Admin
     public Admin editAdmin(@Valid Admin admin) throws Exception {
-        if (admin.getID() == null) {
+        if (admin.getAdminID() == null) {
             throw new Exception("No admin found");
         } else {
             return adminRepository.save(admin);

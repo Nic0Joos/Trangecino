@@ -45,7 +45,7 @@ public class AdminEndpoint {
     @DeleteMapping(path="/delete")
     public ResponseEntity<Void> deleteAdmin(Admin admin){
         try {
-            adminService.deleteAdmin(admin.getID());
+            adminService.deleteAdmin(admin.getAdminID());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
