@@ -1,4 +1,4 @@
-package com.time.trangecino.Controller;
+/* package com.time.trangecino.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,3 +14,4 @@ public class LoginController {
         return "Login.html";
     }
 }
+*/
