@@ -28,8 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //authorizing requests, redirect to html page
     @Override
-    protected void configure(final HttpSecurity http) throws Exception {
-        http
+    protected void configure(final HttpSecurity https) throws Exception {
+        https
                 .csrf().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
