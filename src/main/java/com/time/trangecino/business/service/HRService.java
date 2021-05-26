@@ -10,7 +10,7 @@ import java.util.List;
 
 
 //Written by Alex
-@Service
+//@Service
 public class HRService {
 
 	@Autowired

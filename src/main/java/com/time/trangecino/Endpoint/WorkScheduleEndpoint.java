@@ -17,11 +17,8 @@ import java.util.List;
 @RestController
 @RequestMapping(path= "/WorkSchedule")
 public class WorkScheduleEndpoint {
-    private WorkScheduleService workscheduleservice;
-    private WorkScheduleEndpoint workScheduleEndpoint;
-
     @Autowired
-    public WorkScheduleEndpoint(WorkScheduleService workscheduleservice) { this.workscheduleservice = workscheduleservice;}
+    private WorkScheduleService workscheduleservice;
     @Autowired
     private WorkScheduleRepository workScheduleRepository;
 

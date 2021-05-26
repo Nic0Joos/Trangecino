@@ -1,7 +1,7 @@
 package com.time.trangecino.Endpoint;
 
-import com.time.trangecino.business.service.AdminService;
 import com.time.trangecino.Data.Domain.Admin;
+import com.time.trangecino.business.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +16,8 @@ import java.util.List;
 @RequestMapping(path= "/Admin")
 public class AdminEndpoint {
 
-    private AdminService adminService;
-    private AdminEndpoint adminEndpoint;
     @Autowired
-    public AdminEndpoint(AdminEndpoint adminEndpoint) {
-        this.adminEndpoint = adminEndpoint;
-    }
+    private AdminService adminService;
 
     //add Admin - Endpoint
     @PostMapping(path = "/create")

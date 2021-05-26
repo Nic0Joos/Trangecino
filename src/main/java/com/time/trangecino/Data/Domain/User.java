@@ -11,7 +11,7 @@ public abstract class User {
 
     @Id
     @GeneratedValue
-    private Long ID;
+    protected Long ID;
     @Email
     private String email;
     private String password;
