@@ -6,7 +6,7 @@
         $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: serviceEndpointURL + "admin/register",
+        url: serviceEndpointURL + "/api/Admin",
         data: JSON.stringify({
             "email": email,
             "password": password,
@@ -61,7 +61,7 @@
             $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: serviceEndpointURL + "/employee/create",
+            url: serviceEndpointURL + "/api/Employee",
             data: JSON.stringify({
                 "surname": surname,
                 "email": email,
@@ -85,7 +85,7 @@
             $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: serviceEndpointURL + "/HR/create",
+            url: serviceEndpointURL + "/api/HR",
             data: JSON.stringify({
                     "surname": surname,
                     "email": email,
@@ -109,7 +109,7 @@
                 $.ajax({
                 type: "POST",
                 contentType: "application/json",
-                url: serviceEndpointURL + "/workschedule/create",
+                url: serviceEndpointURL + "/api/Workschedule",
                 data: JSON.stringify({
 
                         "employee": employee,
@@ -135,7 +135,7 @@
         $.ajax({
             type: "GET",
             datatype: "json",
-            url: serviceEndpointURL + "/customer",
+            url: serviceEndpointURL + "/api/Employee",
 
             success: function(data, textStatus, response) {
                 callback(data);
@@ -151,7 +151,7 @@
             $.ajax({
                 type: "GET",
                 datatype: "json",
-                url: serviceEndpointURL + "/customer" + EmployeeID,
+                url: serviceEndpointURL + "/api/Employee" + EmployeeID,
 
                 success: function(data, textStatus, response) {
                     callback(data);
@@ -167,7 +167,7 @@
             $.ajax({
                 type: "GET",
                 datatype: "json",
-                url: serviceEndpointURL + "/HR",
+                url: serviceEndpointURL + "/api/HR",
 
                 success: function(data, textStatus, response) {
                     callback(data);
@@ -183,7 +183,7 @@
                 $.ajax({
                     type: "GET",
                     datatype: "json",
-                    url: serviceEndpointURL + "/HR" + HRID,
+                    url: serviceEndpointURL + "/api/HR/" + HRID,
 
                     success: function(data, textStatus, response) {
                         callback(data);
@@ -199,7 +199,7 @@
                 $.ajax({
                     type: "GET",
                     datatype: "json",
-                    url: serviceEndpointURL + "/admin",
+                    url: serviceEndpointURL + "/api/Admin",
 
                     success: function(data, textStatus, response) {
                         callback(data);
@@ -215,7 +215,7 @@
                 $.ajax({
                     type: "GET",
                     datatype: "json",
-                    url: serviceEndpointURL + "/Admin" + AdminID,
+                    url: serviceEndpointURL + "/api/Admin/" + AdminID,
 
                     success: function(data, textStatus, response) {
                         callback(data);
@@ -231,7 +231,7 @@
                     $.ajax({
                         type: "GET",
                         datatype: "json",
-                        url: serviceEndpointURL + "/Workschedule",
+                        url: serviceEndpointURL + "/api/Workschedule",
 
                         success: function(data, textStatus, response) {
                             callback(data);
@@ -247,7 +247,7 @@
                     $.ajax({
                         type: "GET",
                         datatype: "json",
-                        url: serviceEndpointURL + "/Workschedule" + WorkscheduleID,
+                        url: serviceEndpointURL + "/api/Workschedule/" + WorkscheduleID,
 
                         success: function(data, textStatus, response) {
                             callback(data);
@@ -263,7 +263,7 @@
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
-                url: serviceEndpointURL + "HR/edit"
+                url: serviceEndpointURL + "/api/HR/" + HRID,
                 data: JSON.stringify({
                     "HRID": HRID,
                     "email": email,
@@ -285,7 +285,7 @@
                 $.ajax({
                     type: "PUT",
                     contentType: "application/json",
-                    url: serviceEndpointURL + "employee/edit"
+                    url: serviceEndpointURL + "/api/Employee/" + EmployeeID,
                     data: JSON.stringify({
                         "EmployeeID": EmployeeID,
                         "email": email,
@@ -303,11 +303,11 @@
 
             }
 
-    function putAdmin(AdminID, email, password, companyname, surname, familyname,callback ){
+    function putAdmin(AdminID, email, password, companyname, surname, familyname, callback ){
         $.ajax({
             type: "PUT",
             contentType: "application/json",
-            url: serviceEndpointURL + "admin/edit"
+            url: serviceEndpointURL + "/api/Admin/" + AdminID,
             data: JSON.stringify({
                 "AdminID": AdminID,
                 "email": email,
@@ -330,7 +330,7 @@
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
-                url: serviceEndpointURL + "workschedule/edit"
+                url: serviceEndpointURL + "/api/Workschedule/" + WorkscheduleID,
                 data: JSON.stringify({
                     "WorkscheduleID": WorkscheduleID,
                     "StartMorning": StartMorning,
