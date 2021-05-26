@@ -21,7 +21,7 @@ public class EmployeeService {
 
     //add and save employee
     public void addEmployee(@Valid Employee employee) throws Exception {
-        if (employee.getID() == null) {
+        if (employee.getEmployeeID() == null) {
             if (employeeRepository.findByEmail(employee.getEmail()) != null) {
                 throw new Exception("Please enter a new email address");
             }
@@ -32,7 +32,7 @@ public class EmployeeService {
 
     //edit employee
     public Employee editEmployee(@Valid Employee employee) throws Exception {
-        if (employee.getID() == null) {
+        if (employee.getEmployeeID() == null) {
             throw new Exception("No employee found");
         } else {
             return employeeRepository.save(employee);
@@ -40,8 +40,8 @@ public class EmployeeService {
     }
 
     //delete employee
-    public void deleteEmployee (Long employeeID){
-            employeeRepository.deleteById(employeeID);
+    public void deleteEmployee (Long EmployeeID){
+            employeeRepository.deleteById(EmployeeID);
         }
 
 
@@ -51,8 +51,8 @@ public class EmployeeService {
     }
 
     //find one specific employee
-    public Employee findEmployeeById(long employeeID) throws Exception {
-        Optional<Employee> employeeList = employeeRepository.findById(employeeID);
+    public Employee findEmployeeById(Long EmployeeID) {
+        Optional<Employee> employeeList = employeeRepository.findById(EmployeeID);
         return employeeList.get();
     }
 

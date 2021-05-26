@@ -17,8 +17,8 @@ public class Employee {
     protected String name;
     protected String familyname;
 
-    public Long getID() { return EmployeeID; }
-    public void setID(Long ID) { this.EmployeeID = EmployeeID; }
+    public Long getEmployeeID() { return EmployeeID; }
+    public void setEmployeeID(Long ID) { this.EmployeeID = EmployeeID; }
 
     public String getEmail() {
         return email;
