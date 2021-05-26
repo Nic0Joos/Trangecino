@@ -230,26 +230,78 @@
                     });
                 }
 
-    function postHR(){
+    function postHR(ID, email, password, surname, familyname, callback ){
+            $.ajax({
+                type: "PUT",
+                contentType: "application/json",
+                url: serviceEndpointURL + "HR/change"
+                data: JSON.stringify({
+                    "id": ID,
+                    "email": email,
+                    "password": password,
+                    "surname": surname,
+                    "familyname": familyname
+                }),
+                success: function(data, textStatus, response){
+                    callback(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+            });
+
+        }
+
+    function postEmployee(ID, email, password, surname, familyname, callback ){
+                $.ajax({
+                    type: "PUT",
+                    contentType: "application/json",
+                    url: serviceEndpointURL + "employee/change"
+                    data: JSON.stringify({
+                        "id": ID,
+                        "email": email,
+                        "password": password,
+                        "surname": surname,
+                        "familyname": familyname
+                    }),
+                    success: function(data, textStatus, response){
+                        callback(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR, textStatus, errorThrown);
+                    },
+                });
+
+            }
+
+    function postAdmin(ID, email, password, companyname, surname, familyname,callback ){
+        $.ajax({
+            type: "PUT",
+            contentType: "application/json",
+            url: serviceEndpointURL + "admin/change"
+            data: JSON.stringify({
+                "id": ID,
+                "email": email,
+                "password": password,
+                "companyname": companyname,
+                "surname": surname,
+                "familyname": familyname
+            }),
+            success: function(data, textStatus, response){
+                callback(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR, textStatus, errorThrown);
+            },
+        });
 
     }
 
-    function postEmployee(){
-
+    //Copied from Andreas Martin: https://github.com/DigiPR/digipr-acrm
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
     }
 
-    function postAdmin(){
 
 
-    }
-
-    getHR(function(result){
-                            $("HRTable").empty();
-                            $.each(result, function (i, item){
-                                $("HRTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
-                                               .append($("<td>").text( <a href=\"/HR/edit?id="><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong><br></button></a> +
-                                                "</td></tr>")
-                                       )))));
-                            });
-                        });
 
