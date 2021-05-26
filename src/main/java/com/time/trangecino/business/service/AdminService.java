@@ -50,7 +50,7 @@ public class AdminService {
         return adminRepository.findAll();
     }
     //find one Admin
-    public Admin findAdminById(long adminID) throws Exception {
+    public Admin findAdminById(long adminID) {
         return adminRepository.findById(adminID).get();
     }
 }

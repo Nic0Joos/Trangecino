@@ -1,8 +1,6 @@
 package com.time.trangecino.Data.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
 
@@ -19,6 +17,7 @@ public class WorkSchedule {
     private Time StartAfternoon;
     private Time EndDay;
     private String Project;
+    @OneToOne
     private Employee employee;
 
    // ...

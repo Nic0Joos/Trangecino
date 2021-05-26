@@ -18,7 +18,7 @@ public class Employee {
     protected String familyname;
 
     public Long getEmployeeID() { return EmployeeID; }
-    public void setEmployeeID(Long ID) { this.EmployeeID = EmployeeID; }
+    public void setEmployeeID(Long EmployeeID) { this.EmployeeID = EmployeeID; }
 
     public String getEmail() {
         return email;

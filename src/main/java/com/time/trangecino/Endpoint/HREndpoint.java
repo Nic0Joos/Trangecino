@@ -58,10 +58,10 @@ public class HREndpoint {
     }
     //get specific HR
     @GetMapping(path = "/HR/{HRId}", produces = "application/json")
-    public ResponseEntity<HR> getHR(@PathVariable(value = "HRId") String HRId) {
+    public ResponseEntity<HR> getHR(@PathVariable(value = "HRID") String HRID) {
         HR HR;
         try {
-            HR = HRService.findHRById(Long.parseLong(HRId));
+            HR = HRService.findHRById(Long.parseLong(HRID));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
