@@ -28,7 +28,7 @@ public class WorkSchedule {
         this.Project = Project;
     }
 
-//getter and setter employee
+//getter and setter Employee
 public Employee getEmployee() { return employee; }
 public void setEmployee(Employee employee) { this.employee = employee; }
 
