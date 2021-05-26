@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="script" href="../assets/js/app.js">
+
 </head>
 
 <body>
@@ -41,39 +43,24 @@
             <p><a class="btn btn-primary" role="button" style="border-color: var(--info);background: var(--cyan);" href="Documentation.html">Learn more</a></p>
         </div>
     </div>
-    <div class="container">
-        <h1 class="text-center" style="padding: 10px;">Edit your times</h1>
-    </div>
-    <div class="container">
+    <div class="container" style="min-height:400px">
+        <h1 class="text-center" style="padding: 10px;">Change an admin</h1>
         <div class="row">
-            <div class="col-md-12" style="margin-bottom: 20px;">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Morning</th>
-                                <th>Evening</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" placeholder="Get Time"></td>
-                                <td><input type="text" placeholder="Get Time"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" placeholder="Get Time"><br></td>
-                                <td><input type="text" placeholder="Get TIme"><br></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th>Date </th>
+                        <th>Action </th>
+                    </tr>
+                    </thead>
+                    <tbody id="WorkscheduleTable">
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row" style="margin-bottom: 20px;">
-            <div class="col-md-12" style="margin-bottom: 50px;"><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);">Save</button></div>
-        </div>
+
     </div>
     <footer class="footer-dark">
         <div class="container">
@@ -83,7 +70,7 @@
                     <ul>
                         <li><a href="AdminPanel.html">Management</a></li>
                         <li><a href="HRPanel.html">Human Resources</a></li>
-                        <li><a href="EmployeePanel.html">Workforce</a></li>
+                        <li><a href="EmployeePanel.html">Hosting</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
@@ -103,6 +90,29 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+             $(loadData());
+
+               function loadData(){
+                    getWorkschedules( function(result) ){
+                        $.each(result, function (i, item){
+                            $("WorkscheduleTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.date).
+                                           .append($("<td>").text(<a href=\"/workschedule/edit?id="><button class="btn btn-primary" type="button" style="background:var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
+                                            "</td></tr>")
+                                        )))));
+                        });
+                    }
+
+
+               }
+       }
+
+
+
+    </script>
+
 </body>
 
 </html>
