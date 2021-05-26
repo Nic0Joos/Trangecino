@@ -1,9 +1,13 @@
 package com.time.trangecino.Data.Domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
+import java.util.List;
 
 //written by Luca Weisskopf
 @Entity
@@ -16,6 +20,17 @@ public class Employee {
     protected String password;
     protected String name;
     protected String familyname;
+    @OneToMany (mappedBy = "employee")
+    @JsonIgnore
+    protected List<WorkSchedule> Workschedule;
+
+    public List<WorkSchedule> getWorkschedule() {
+        return Workschedule;
+    }
+
+    public void setWorkschedule(List<WorkSchedule> workschedule) {
+        Workschedule = workschedule;
+    }
 
     public Long getEmployeeID() { return EmployeeID; }
     public void setEmployeeID(Long EmployeeID) { this.EmployeeID = EmployeeID; }
@@ -47,4 +62,6 @@ public class Employee {
     public void setFamilyname(String familyname) {
         this.familyname = familyname;
     }
+
+
 }

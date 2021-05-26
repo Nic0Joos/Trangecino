@@ -9,6 +9,5 @@ import org.springframework.stereotype.Repository;
  //Written by Alex
 @Repository
 public interface HRRepository extends JpaRepository<HR, Long> {
-
-     String findByEmail(String email);
+     HR findByEmail(String email);
 }

@@ -17,7 +17,7 @@ public class Admin  {
     protected String password;
     protected String name;
     protected String surname;
-    private String CompanyName;
+    protected String CompanyName;
 
     public Long getAdminID() { return AdminID; }
     public void setAdminID(Long AdminID) { this.AdminID = AdminID; }
