@@ -26,15 +26,15 @@ public class WorkSchedule {
         this.Project = Project;
     }
 
-    //getter and setter employee
+//getter and setter employee
 public Employee getEmployee() { return employee; }
 public void setEmployee(Employee employee) { this.employee = employee; }
 
-    //getter and setter WorkScheduleID
+//getter and setter WorkScheduleID
 public Long getWorkScheduleID() { return WorkScheduleID; }
 public void setWorkScheduleID(Long workScheduleID) { WorkScheduleID = workScheduleID; }
 
-    //getter and setter for date
+//getter and setter for date
 public Date getdate() {return date;}
 public void setDate(Date date) {this.date = date;}
 
@@ -59,6 +59,7 @@ public String getProject() {return Project;}
 public void setProject(String Project) {this.Project = Project;}
 
 //getter and setter for EndDay
+public Time getEndDay (Time EndDay) {return EndDay;}
 public void setEndDay(Time EndDay) {this.EndDay = EndDay;}
 
 }

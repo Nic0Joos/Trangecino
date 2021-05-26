@@ -39,11 +39,11 @@ public class WorkScheduleService {
         workschedulerepository.deleteByEmployeeAndDate(employee, date);
     }
 
-    //
+    // find all Workschedules from the logged-in employee
     public List<WorkSchedule> FindAllWorkSchedule (){
         return workschedulerepository.findAllbyEmployeeID(employeeService.getCurrentEmployee().getID());
     }
-
+    // find one workschedule from a specific employee
     public WorkSchedule FindOneWorkSchedule(Long WorkScheduleID) throws Exception {
         List <WorkSchedule> WorkScheduleList = workschedulerepository.findOneWorkSchedule(WorkScheduleID);
         if (WorkScheduleList.isEmpty()){
