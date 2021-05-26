@@ -13,10 +13,10 @@ public abstract class User {
     @GeneratedValue
     protected Long ID;
     @Email
-    private String email;
-    private String password;
-    private String name;
-    private String familyname;
+    protected String email;
+    protected String password;
+    protected String name;
+    protected String familyname;
 
     public Long getID() { return ID; }
     public void setID(Long ID) { this.ID = ID; }
