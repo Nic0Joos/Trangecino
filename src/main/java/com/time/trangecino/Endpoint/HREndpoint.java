@@ -44,7 +44,7 @@ public class HREndpoint {
     @DeleteMapping(path="/delete")
     public ResponseEntity<Void> deleteHR(HR HR){
         try {
-            HRService.deleteHR(HR.getID());
+            HRService.deleteHR(HR.getHRID());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
