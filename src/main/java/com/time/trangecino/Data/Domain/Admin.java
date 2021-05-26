@@ -2,6 +2,9 @@ package com.time.trangecino.Data.Domain;
 
 //written by Lennart
 
+import javax.persistence.Entity;
+
+@Entity
 public class Admin extends User {
 
     private String CompanyName;

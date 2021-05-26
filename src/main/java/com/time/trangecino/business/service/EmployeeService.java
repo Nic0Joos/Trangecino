@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 //Written by Luca Weisskopf
 @Service
@@ -51,11 +52,8 @@ public class EmployeeService {
 
     //find one specific employee
     public Employee findEmployeeById(long employeeID) throws Exception {
-        List<Employee> employeeList = employeeRepository.findbyID(employeeID);
-        if (employeeList.isEmpty()){
-            throw new Exception("No employee with ID "+employeeID+" found.");
-        }
-        return employeeList.get(0);
+        Optional<Employee> employeeList = employeeRepository.findById(employeeID);
+        return employeeList.get();
     }
 
     public Employee getCurrentEmployee() {

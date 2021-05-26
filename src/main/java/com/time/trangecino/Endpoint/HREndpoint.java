@@ -14,11 +14,9 @@ import java.util.List;
 @RestController
 @RequestMapping(path= "/HR")
 public class HREndpoint {
-    private HRService HRService;
-    private HREndpoint HREndpoint;
-    @Autowired
-    public HREndpoint(HREndpoint HREndpoint) { this.HREndpoint = HREndpoint; }
 
+    @Autowired
+    private HRService HRService;
 
     //add HR - Endpoint
     @PostMapping(path = "/create")

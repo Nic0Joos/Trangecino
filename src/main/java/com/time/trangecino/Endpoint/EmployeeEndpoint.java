@@ -15,13 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping(path= "/employee")
 public class EmployeeEndpoint {
-    private EmployeeService employeeService;
-    private EmployeeEndpoint employeeEndpoint;
     @Autowired
-    public EmployeeEndpoint(EmployeeEndpoint employeeEndpoint) {
-        this.employeeEndpoint = employeeEndpoint;
-    }
-
+    private EmployeeService employeeService;
 
     //add employee - Endpoint
     @PostMapping(path = "/create")

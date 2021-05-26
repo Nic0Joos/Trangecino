@@ -51,11 +51,7 @@ public class AdminService {
     }
     //find one Admin
     public Admin findAdminById(long adminID) throws Exception {
-        List<Admin> adminList = adminRepository.findbyID(adminID);
-        if (adminList.isEmpty()){
-            throw new Exception("No admin with ID "+adminID+" found.");
-        }
-        return adminList.get(0);
+        return adminRepository.findById(adminID).get();
     }
 }
 
