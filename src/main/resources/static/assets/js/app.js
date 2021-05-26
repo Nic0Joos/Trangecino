@@ -2,7 +2,7 @@
 
     var serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
-    function register(email, password, companyname, surname, familyname){
+    function register(email, password, companyname, surname, familyname, callback){
         $.ajax({
         type: "POST",
         contentType: "application/json",
@@ -24,7 +24,7 @@
         });
     }
 
-    function login(email, password){
+    function login(email, password, callback){
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -214,6 +214,22 @@
                 });
             }
 
+    function GetWorkschedules(callback){
+                    $.ajax({
+                        type: "GET",
+                        datatype: "json",
+                        url: serviceEndpointURL + "/Workschedule",
+
+                        success: function(data, textStatus, response) {
+                            callback(data);
+                        },
+
+                        error: function(jqXHR, textStatus, errorThrown){
+                            console.log(jqXHR, textStatus, errorThrown);
+                        },
+                    });
+                }
+
     function postHR(){
 
     }
@@ -227,5 +243,13 @@
 
     }
 
-
+    getHR(function(result){
+                            $("HRTable").empty();
+                            $.each(result, function (i, item){
+                                $("HRTable").append($("<tr>").append($("<td>").text(item.id).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                                               .append($("<td>").text( <a href=\"/HR/edit?id="><button class="btn btn-primary" type="button" style="background: var(--cyan);border-color: var(--info);"> <strong>Edit</strong><br></button></a> +
+                                                "</td></tr>")
+                                       )))));
+                            });
+                        });
 
