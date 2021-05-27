@@ -1,6 +1,6 @@
 //Author Nico
 
-    var serviceEndpointURL = "trangecino.herokuapp.com"
+    var serviceEndpointURL = "https://trangecino.herokuapp.com"
 
 
 
@@ -20,7 +20,7 @@
                   },
 
         });
-    }
+    };
 
     function register(email, password, CompanyName, surname, familyname, callback){
         $.ajax({
@@ -40,9 +40,9 @@
         error: function(jqXHR, textStatus, errorThrown){
                 console.log(jqXHR, textStatus, errorThrown);
                 callback(false);
-        }
+        },
         });
-    }
+    };
 
     function login(email, password, callback){
             $.ajax({
@@ -60,9 +60,9 @@
                 error: function (jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR, textStatus, errorThrown);
                             callback(false);
-                        }
+                        },
             });
-    }
+    };
 
     function PostEmployee(surname, email, password, familyname){
             $.ajax({
@@ -82,7 +82,7 @@
             error: function (jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR, textStatus, errorThrown);
                             callback(false);
-            }
+            },
 
             });
     }
@@ -105,10 +105,10 @@
             error: function (jqXHR, textStatus, errorThrown) {
                                         console.log(jqXHR, textStatus, errorThrown);
                                         callback(false);
-                        }
+                        },
 
             });
-    }
+    };
 
     function PostWorkSchedule(employee, OutOfOffice, date, projectname){
                 $.ajax({
@@ -130,10 +130,10 @@
                 error: function (jqXHR, textStatus, errorThrown) {
                                             console.log(jqXHR, textStatus, errorThrown);
                                             callback(false);
-                            }
+                            },
 
                 });
-        }
+        };
 
 
     function GetEmployees(callback){
@@ -150,7 +150,7 @@
                 console.log(jqXHR, textStatus, errorThrown);
             },
         });
-    }
+    };
 
     function GetEmployee(EmployeeID, callback){
             $.ajax({
@@ -166,7 +166,7 @@
                     console.log(jqXHR, textStatus, errorThrown);
                 },
             });
-        }
+        };
 
     function GetHRs(callback){
             $.ajax({
@@ -182,7 +182,7 @@
                     console.log(jqXHR, textStatus, errorThrown);
                 },
             });
-        }
+        };
 
     function GetHR(HRID, callback){
                 $.ajax({
@@ -198,7 +198,7 @@
                         console.log(jqXHR, textStatus, errorThrown);
                     },
                 });
-            }
+            };
 
     function GetAdmins(callback){
                 $.ajax({
@@ -214,7 +214,7 @@
                         console.log(jqXHR, textStatus, errorThrown);
                     },
                 });
-            }
+            };
 
     function GetAdmin(AdminID, callback){
                 $.ajax({
@@ -230,7 +230,7 @@
                         console.log(jqXHR, textStatus, errorThrown);
                     },
                 });
-            }
+            };
 
     function GetWorkschedules(callback){
                     $.ajax({
@@ -246,7 +246,7 @@
                             console.log(jqXHR, textStatus, errorThrown);
                         },
                     });
-                }
+                };
 
     function GetWorkschedule(WorkscheduleID, callback){
                     $.ajax({
@@ -262,7 +262,7 @@
                             console.log(jqXHR, textStatus, errorThrown);
                         },
                     });
-                }
+                };
 
     function putHR(HRID, email, password, surname, familyname, callback ){
             $.ajax({
@@ -284,7 +284,7 @@
                 },
             });
 
-        }
+        };
 
     function putEmployee(EmployeeID, email, password, surname, familyname, callback ){
                 $.ajax({
@@ -306,7 +306,7 @@
                     },
                 });
 
-            }
+            };
 
     function putAdmin(AdminID, email, password, CompanyName, surname, familyname, callback ){
         $.ajax({
@@ -329,7 +329,7 @@
             },
         });
 
-    }
+    };
 
     function putWorkschedule(WorkscheduleID, StartMorning, Lunch, StartAfternoon, EndDay, callback ){
             $.ajax({
@@ -351,9 +351,9 @@
                 },
             });
 
-        }
+        };
 
     //Copied from Andreas Martin: https://github.com/DigiPR/digipr-acrm
     function getURLParameter(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
-    }
+    };
