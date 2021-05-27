@@ -36,11 +36,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .formLogin()
                     .loginPage("/Login.html")
-                    .permitAll()
-                    .and()
+                    .permitAll();
+                    /*.and()
                 .logout()
                     .permitAll()
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/");*/
     }
 
         //password encoder, in that case the BCryptPassword Encoder
