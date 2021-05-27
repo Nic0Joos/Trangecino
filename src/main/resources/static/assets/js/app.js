@@ -310,7 +310,7 @@
 
             }
 
-    function putAdmin(AdminID, email, password, companyname, surname, familyname, callback ){
+    function putAdmin(AdminID, email, password, CompanyName, surname, familyname, callback ){
         $.ajax({
             type: "PUT",
             contentType: "application/json",
@@ -319,7 +319,7 @@
                 "AdminID": AdminID,
                 "email": email,
                 "password": password,
-                "companyname": companyname,
+                "CompanyName": CompanyName,
                 "surname": surname,
                 "familyname": familyname
             }),
