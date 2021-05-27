@@ -28,17 +28,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //authorizing requests, redirect to html page
     @Override
-    protected void configure(final HttpSecurity https) throws Exception {
-        https
-                .csrf().disable()
-                .requiresChannel().requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null).requiresSecure().and() // If the X-Forwarded-Proto header is present, redirect to HTTPS (Heroku)
+    protected void configure(final HttpSecurity http) throws Exception {
+        http
                 .authorizeRequests()
+                .antMatchers("/", "/Index.html").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/Login.html")
-                .and()
-                .logout();
+                .logout()
+                .permitAll();
     }
 
         //password encoder, in that case the BCryptPassword Encoder
