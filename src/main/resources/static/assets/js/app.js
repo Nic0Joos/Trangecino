@@ -1,6 +1,6 @@
 //Author Nico
 
-    var serviceEndpointURL = https://trangecino.herokuapp.com
+    var serviceEndpointURL = "trangecino.herokuapp.com"
 
     function register(email, password, companyname, surname, familyname, callback){
         $.ajax({
