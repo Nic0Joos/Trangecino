@@ -8,7 +8,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: "https://postman-echo.com/get",
+            url: "postman-echo.com/get",
 
             success: function(data, textStatus, response) {
                             callback(true);
