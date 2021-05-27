@@ -90,9 +90,9 @@
 
     <script language="JavaScript">
         $(document).ready(function () {
-           $("#registerBtn").click(function (event) {
+           $("#registerBtn").on("click", function (event) {
                register($('input[email=email]').val(), $('input[password=password]').val(), $('input[CompanyName=CompanyName]').val(),
-                        $('input[surname=surname]').val(), $('input[familyname=familyname]').val(),
+                        $('input[surname=surname]').val(), $('input[familyname=familyname]').val()
            )});
                });
     </script>
