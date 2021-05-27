@@ -56,6 +56,8 @@ public class AdminEndpoint {
     public List<Admin> getAdmins() {
         return adminService.findAllAdmins();
     }
+
+
     //get specific Admin
     @GetMapping(path = "/Admin/{AdminID}", produces = "application/json")
     public ResponseEntity<Admin> getAdmin(@PathVariable(value = "AdminID") String AdminID) {
