@@ -32,15 +32,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers("/", "/Index.html", "/Documentation.html", "/AdminPanel.html", "/Register.html", "/Team.html", "/assets/**", "/api/**").permitAll()
-                    .anyRequest().authenticated();
-
-                /*.formLogin()
+                    .anyRequest().authenticated()
+                    .and()
+                    .formLogin()
                     .loginPage("/Login.html")
                     .permitAll()
                     .and()
                 .logout()
                     .permitAll()
-                    .logoutSuccessUrl("/");*/
+                    .logoutSuccessUrl("/");
     }
 
         //password encoder, in that case the BCryptPassword Encoder

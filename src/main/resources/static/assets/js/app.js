@@ -1,6 +1,16 @@
 //Author Nico
 
-    var serviceEndpointURL = "trangecino.herokuapp.com"
+    var serviceEndpointURL = "trangecino.herokuapp.com"$
+
+    function testingAPI(){
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: ,
+
+
+        })
+    }
 
     function register(email, password, companyname, surname, familyname, callback){
         $.ajax({
