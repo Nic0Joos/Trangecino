@@ -1,15 +1,25 @@
 //Author Nico
 
-    var serviceEndpointURL = "trangecino.herokuapp.com"$
+    var serviceEndpointURL = "trangecino.herokuapp.com"
 
-    function testingAPI(){
+
+
+    function testingAPI(callback){
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: ,
+            url: "https://postman-echo.com/get",
 
+            success: function(data, textStatus, response) {
+                            callback(true);
+                  },
 
-        })
+             error: function(jqXHR, textStatus, errorThrown){
+                            console.log(jqXHR, textStatus, errorThrown);
+                            callback(false);
+                  },
+
+        });
     }
 
     function register(email, password, companyname, surname, familyname, callback){
