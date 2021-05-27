@@ -64,7 +64,7 @@
             });
     }
 
-    function PostEmployee(surname, email, password, familyname, department){
+    function PostEmployee(surname, email, password, familyname){
             $.ajax({
             type: "POST",
             contentType: "application/json",
@@ -74,7 +74,6 @@
                 "email": email,
                 "password": password,
                 "familyname": familyname,
-                "department": department,
             }),
             success: function (data, textStatus, response) {
                             callback(true);
@@ -88,7 +87,7 @@
             });
     }
 
-    function PostHR(surname, email, password, familyname, department){
+    function PostHR(surname, email, password, familyname){
             $.ajax({
             type: "POST",
             contentType: "application/json",
@@ -98,7 +97,6 @@
                     "email": email,
                     "password": password,
                     "familyname": familyname,
-                    "department": department,
             }),
 
             success: function (data, textStatus, response) {
