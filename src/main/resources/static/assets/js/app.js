@@ -44,19 +44,6 @@
             });
     }
 
-    function validateLogin(callback) {
-        $.ajax({
-            type: "HEAD",
-            url: serviceEndpointURL + "/validate",
-            success: function (data, textStatus, response) {
-                callback(true);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                callback(false);
-            }
-        });
-    }
-
     function PostEmployee(surname, email, password, familyname, department){
             $.ajax({
             type: "POST",
