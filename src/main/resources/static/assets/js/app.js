@@ -22,7 +22,7 @@
         });
     }
 
-    function register(email, password, companyname, surname, familyname, callback){
+    function register(email, password, CompanyName, surname, familyname, callback){
         $.ajax({
         type: "POST",
         contentType: "application/json",
@@ -30,7 +30,7 @@
         data: JSON.stringify({
             "email": email,
             "password": password,
-            "companyname": companyname,
+            "companyName": CompanyName,
             "surname": surname,
             "familyname": familyname,
         }),
