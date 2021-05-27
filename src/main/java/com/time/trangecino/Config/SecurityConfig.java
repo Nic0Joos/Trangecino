@@ -32,15 +32,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers("/", "/Index.html", "/APITest.html", "/ClockTime.html", "/CreateEmployee.html", "/CreateHR.html", "/CreateWorkschedule.html", "/EditAdmin.html", "/EditEmployee.html", "/EditHR.html", "/EditWorker.html", "/Documentation.html", "/AdminPanel.html", "/HRPanel.html", "/EmployeePanel.html", "/Register.html", "/Team.html", "/Workschedules.html", "/assets/**", "/api/**").permitAll()
-                    .anyRequest().authenticated()
-                    .and()
+                    .anyRequest().authenticated();
+                    /*.and()
                 .formLogin()
                     .loginPage("/Login.html")
                     .permitAll()
                     .and()
                 .logout()
                     .permitAll()
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/");*/
     }
 
         //password encoder, in that case the BCryptPassword Encoder
