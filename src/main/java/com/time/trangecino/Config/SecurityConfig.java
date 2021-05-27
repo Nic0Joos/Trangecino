@@ -35,12 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("Team.html").authenticated()
                     .anyRequest().authenticated()
                     .and()
-                .formLogin()
-                    .loginPage("/Login.html")
-                    .permitAll()
-                    .and()
                 .logout()
-                    .permitAll();
+                    .permitAll()
+                    .logoutSuccessUrl("/");
     }
 
         //password encoder, in that case the BCryptPassword Encoder
