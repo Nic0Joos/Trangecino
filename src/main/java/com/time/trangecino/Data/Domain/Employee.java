@@ -12,28 +12,30 @@ import java.util.List;
 //written by Luca Weisskopf
 @Entity
 public class Employee {
+    //attributes
     @Id
     @GeneratedValue
-    protected Long ID;
+    protected Long EmployeeID;
     @Email
     protected String email;
     protected String password;
     protected String name;
     protected String familyname;
+    //One employee can have many workschedules
     @OneToMany (mappedBy = "employee")
     @JsonIgnore
     protected List<WorkSchedule> Workschedule;
 
+    //getters and setters
     public List<WorkSchedule> getWorkschedule() {
         return Workschedule;
     }
-
     public void setWorkschedule(List<WorkSchedule> workschedule) {
         Workschedule = workschedule;
     }
 
-    public Long getID() { return ID; }
-    public void setID(Long EmployeeID) { this.ID = EmployeeID; }
+    public Long getEmployeeID() { return EmployeeID; }
+    public void setEmployeeID(Long EmployeeID) { this.EmployeeID = EmployeeID; }
 
     public String getEmail() {
         return email;
@@ -62,6 +64,5 @@ public class Employee {
     public void setFamilyname(String familyname) {
         this.familyname = familyname;
     }
-
 
 }
