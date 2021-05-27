@@ -83,6 +83,7 @@
 
     <script>
          $(document).ready(function(){
+            $("#TestBtn").click(function (event) {
               testingAPI( function(result){
                     if(result){
                         $("#TestP").html("It was a success!")
@@ -90,6 +91,7 @@
                         $("#TestP").html("It was not good!")
                     }
               });
+            });
          });
 
     </script>
