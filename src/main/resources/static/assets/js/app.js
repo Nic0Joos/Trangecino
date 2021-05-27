@@ -40,7 +40,7 @@
         error: function(jqXHR, textStatus, errorThrown){
                 console.log(jqXHR, textStatus, errorThrown);
                 callback(false);
-        }
+        },
         });
     }
 
@@ -60,7 +60,7 @@
                 error: function (jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR, textStatus, errorThrown);
                             callback(false);
-                        }
+                        },
             });
     }
 
@@ -82,7 +82,7 @@
             error: function (jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR, textStatus, errorThrown);
                             callback(false);
-            }
+            },
 
             });
     }
@@ -105,7 +105,7 @@
             error: function (jqXHR, textStatus, errorThrown) {
                                         console.log(jqXHR, textStatus, errorThrown);
                                         callback(false);
-                        }
+                        },
 
             });
     }
@@ -130,7 +130,7 @@
                 error: function (jqXHR, textStatus, errorThrown) {
                                             console.log(jqXHR, textStatus, errorThrown);
                                             callback(false);
-                            }
+                            },
 
                 });
         }
