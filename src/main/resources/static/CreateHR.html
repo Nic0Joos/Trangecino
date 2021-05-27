@@ -56,7 +56,6 @@
             <div class="col-lg-6" style="margin-top: 20px;margin-bottom: 30px;">
                 <form>
                     <p style="padding: 10px;"><strong>Familyname</strong></p><input class="form-control form-control-lg" name="familyname" type="text" style="margin-bottom: 20px;" placeholder="Name">
-                    <p style="padding: 10px;"><strong>Department</strong></p><input class="form-control form-control-lg" name="Department" type="text" style="margin-bottom: 20px;" placeholder="Finances">
                     <div class="col" style="margin-top: 80px;margin-bottom: 50px;"><button id="SaveBtn" class="btn btn-primary" type="button" style="width: 100px;background: var(--cyan);border-color: var(--cyan);font-size: 20px;"><strong>Save</strong></button></div>
                 </form>
             </div>
@@ -97,7 +96,7 @@
         $(document).ready(function () {
            $("#saveBtn").click(function (event) {
                PostHR($('input[surname=surname]').val(), $('input[email=email]').val(), $('input[password=password]').val(),
-                        $('input[familyname=familyname]').val(), $('input[department=department]').val(),
+                        $('input[familyname=familyname]').val(),
                );
             });
         });
