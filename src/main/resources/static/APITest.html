@@ -84,9 +84,9 @@
     <script>
          $(document).ready(function(){
               testingAPI( function(result){
-                    if(!result){
+                    if(result){
                         $("#TestP").html("It was a success!")
-                    } else {
+                    } else if(!result) {
                         $("#TestP").html("It was not good!")
                     }
               });
