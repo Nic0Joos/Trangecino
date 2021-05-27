@@ -31,15 +31,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/", "/Index.html").permitAll()
+                    .antMatchers("/", "/Index.html", "/css/**", "/js/**", "/images/**, \"/api/**\"").permitAll()
+                    .antMatchers("Team.html").authenticated()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
-                .loginPage("/Login.html")
-                .permitAll()
-                .and()
+                    .loginPage("/Login.html")
+                    .permitAll()
+                    .and()
                 .logout()
-                .permitAll();
+                    .permitAll();
     }
 
         //password encoder, in that case the BCryptPassword Encoder
