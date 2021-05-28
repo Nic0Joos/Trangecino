@@ -26,7 +26,7 @@ public class WorkSchedule {
     @JsonIgnore
     protected Employee employee;
 
-   // ...
+
     public WorkSchedule (Date date, Time StartMorning, Time Lunch, Time StartAfternoon, Time EndDay, String Project) {
         this.date = date;
         this.StartMorning = StartMorning;
@@ -36,9 +36,6 @@ public class WorkSchedule {
         this.Project = Project;
     }
 
-    public WorkSchedule() {
-
-    }
 
     //getter and setter Employee
 public Employee getEmployee() { return employee; }

@@ -47,8 +47,8 @@ public class EmployeeService {
     }
 
     //delete employee
-    public void deleteEmployee (Long EmployeeID){
-            employeeRepository.deleteById(EmployeeID);
+    public void deleteEmployee (Long ID){
+            employeeRepository.deleteById(ID);
         }
 
 
@@ -57,9 +57,9 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    //find one specific employee (using the EmployeeID)
-    public Employee findEmployeeById(Long EmployeeID) {
-        Optional<Employee> employeeList = employeeRepository.findById(EmployeeID);
+    //find one specific employee (using the ID)
+    public Employee findEmployeeById(Long ID) {
+        Optional<Employee> employeeList = employeeRepository.findById(ID);
         return employeeList.get();
     }
 

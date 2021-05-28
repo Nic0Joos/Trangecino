@@ -46,17 +46,4 @@ public class WorkScheduleService {
        return workschedulerepository.findById(WorkScheduleID).get();
     }
 
-      /*public enum WorkingDaysStatus {
-  // possible workdays
-      OutOfOffice,
-      InOffice,
-      ;*/
-
-
-
-
-
-    private void getWorkingDaysStatus() {
-    }
-
 }

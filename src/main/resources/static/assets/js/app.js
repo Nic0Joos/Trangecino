@@ -3,25 +3,6 @@
     var serviceEndpointURL = "https://trangecino.herokuapp.com"
 
 
-
-    function testingAPI(callback){
-        $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            url: "postman-echo.com/get",
-
-            success: function(data, textStatus, response) {
-                            callback(true);
-                  },
-
-             error: function(jqXHR, textStatus, errorThrown){
-                            console.log(jqXHR, textStatus, errorThrown);
-                            callback(false);
-                  },
-
-        });
-    };
-
     function register(email, password, CompanyName, surname, familyname, callback){
         $.ajax({
         type: "POST",
