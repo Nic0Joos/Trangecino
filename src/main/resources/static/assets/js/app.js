@@ -1,6 +1,6 @@
 //Author Nico
 
-    var serviceEndpointURL = "https://trangecino.herokuapp.com"
+    var serviceEndpointURL = "http://localhost:8080"
 
 
     function register(email, password, CompanyName, surname, familyname, callback){
@@ -11,9 +11,9 @@
         data: JSON.stringify({
             "email": email,
             "password": password,
-            "companyName": CompanyName,
+            "CompanyName": CompanyName,
             "surname": surname,
-            "familyname": familyname,
+            "name": familyname,
         }),
         success: function(data, textStatus, response) {
                 callback(true);
@@ -338,7 +338,7 @@
     function deleteAdmin(AdminID, callback){
         $.ajax({
             type: "DELETE",
-            contentType: : "application/json",
+            contentType: "application/json",
             url: serviceEndpointURL + "/api/Admin" + AdminID,
             success: function(data, textStatus, response){
                      callback(data);
@@ -353,7 +353,7 @@
     function deleteHR(HRID, callback){
             $.ajax({
                 type: "DELETE",
-                contentType: : "application/json",
+                contentType: "application/json",
                 url: serviceEndpointURL + "/api/HR" + HRID,
                 success: function(data, textStatus, response){
                          callback(data);
@@ -368,7 +368,7 @@
      function deleteEmployee(ID, callback){
                  $.ajax({
                      type: "DELETE",
-                     contentType: : "application/json",
+                     contentType: "application/json",
                      url: serviceEndpointURL + "/api/Employee" + ID,
                      success: function(data, textStatus, response){
                               callback(data);
@@ -382,7 +382,7 @@
     function deleteWorkschedule(WorkscheduleID, callback){
                      $.ajax({
                          type: "DELETE",
-                         contentType: : "application/json",
+                         contentType: "application/json",
                          url: serviceEndpointURL + "/api/Workschedule" + WorkscheduleID,
                          success: function(data, textStatus, response){
                                   callback(data);

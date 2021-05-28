@@ -30,13 +30,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
+                .authorizeRequests().antMatchers("/").permitAll();
+
+        /*http
                 .authorizeRequests()
                     .antMatchers("/", "/Index.html", "/ClockTime.html", "/CreateEmployee.html", "/CreateHR.html", "/CreateWorkschedule.html", "/EditAdmin.html", "/EditEmployee.html", "/EditHR.html", "/EditWorker.html", "/Documentation.html", "/AdminPanel.html", "/HRPanel.html", "/EmployeePanel.html", "/Register.html", "/Login.html", "/Team.html", "/Workschedules.html", "/assets/**", "/api/**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
                     .loginPage("/Login.html")
-                    .permitAll();
+                    .permitAll();*/
                     /*.and()
                 .logout()
                     .permitAll()
