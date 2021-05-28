@@ -115,6 +115,15 @@
                );
              });
 
+             $("#DeleteBtn").click(function (event) {
+               deleteEmployee($('input[name=ID]').val(), function(result) {
+                            console.log("successful deletion");
+                        }, function(error) {
+                            alert("Something went wrong");
+                        }
+               );
+             });
+
 
         });
 

@@ -353,6 +353,51 @@
 
         };
 
+    function deleteAdmin(AdminID, callback){
+        $.ajax({
+            type: "DELETE",
+            contentType: : "application/json",
+            url: serviceEndpointURL + "/api/Admin" + AdminID,
+            success: function(data, textStatus, response){
+                     callback(data);
+                     },
+            error: function(jqXHR, textStatus, errorThrown) {
+                     console.log(jqXHR, textStatus, errorThrown);
+            },
+
+        });
+    };
+
+    function deleteHR(HRID, callback){
+            $.ajax({
+                type: "DELETE",
+                contentType: : "application/json",
+                url: serviceEndpointURL + "/api/HR" + HRID,
+                success: function(data, textStatus, response){
+                         callback(data);
+                         },
+                error: function(jqXHR, textStatus, errorThrown) {
+                         console.log(jqXHR, textStatus, errorThrown);
+                },
+
+            });
+        };
+
+     function deleteEmployee(ID, callback){
+                 $.ajax({
+                     type: "DELETE",
+                     contentType: : "application/json",
+                     url: serviceEndpointURL + "/api/Employee" + ID,
+                     success: function(data, textStatus, response){
+                              callback(data);
+                              },
+                     error: function(jqXHR, textStatus, errorThrown) {
+                              console.log(jqXHR, textStatus, errorThrown);
+                     },
+
+                 });
+             };
+
     //Copied from Andreas Martin: https://github.com/DigiPR/digipr-acrm
     function getURLParameter(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;

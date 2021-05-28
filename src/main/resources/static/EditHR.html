@@ -113,6 +113,15 @@
                         }
                );
              });
+
+             $("#DeleteBtn").click(function (event) {
+               deleteHR($('input[name=HRID]').val(), function(result) {
+                            console.log("successful deletion");
+                        }, function(error) {
+                            alert("Something went wrong");
+                        }
+               );
+             });
            
 
         }
