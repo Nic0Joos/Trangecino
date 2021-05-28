@@ -58,11 +58,11 @@ public class EmployeeEndpoint {
     }
 
     //get one specific employee - Endpoint
-    @GetMapping(path = "/Employee/{EmployeeID}", produces = "application/json")
-    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "EmployeeId") String EmployeeID) {
+    @GetMapping(path = "/Employee/{ID}", produces = "application/json")
+    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "ID") String ID) {
         Employee employee = null;
         try {
-            employee = employeeService.findEmployeeById(Long.parseLong(EmployeeID));
+            employee = employeeService.findEmployeeById(Long.parseLong(ID));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
