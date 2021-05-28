@@ -92,9 +92,13 @@
         $(document).ready(function () {
            $("#registerBtn").on("click", function (event) {
                register($('input[name=email]').val(), $('input[name=password]').val(), $('input[name=CompanyName]').val(),
-                        $('input[name=surname]').val(), $('input[name=familyname]').val()
-           )});
+                        $('input[name=surname]').val(), $('input[name=familyname]').val(), function (result) {
+                            alert("It was successful!");
+                        }, function (error) {
+                            alert("Something went wrong");
                });
+            });
+        });
     </script>
 </body>
 
