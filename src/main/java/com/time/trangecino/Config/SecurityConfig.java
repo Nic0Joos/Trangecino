@@ -10,12 +10,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-//Luca Weisskopf
+//added by Luca Weisskopf
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    //employee, HR and Admin manually created with username and password.
+    //employee, HR and Admin manually created with username, password and role.
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
@@ -43,6 +43,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutSuccessUrl("/");*/
     }
 
+        /*
+         * Copyright (c) 2020. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+        * All rights reserved.
+         */
         //password encoder, in that case the BCryptPassword Encoder
         @Bean
         public PasswordEncoder passwordEncoder() {

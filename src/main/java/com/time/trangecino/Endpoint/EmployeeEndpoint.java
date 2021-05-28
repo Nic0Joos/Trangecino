@@ -44,7 +44,7 @@ public class EmployeeEndpoint {
     @DeleteMapping(path = "/Employee/{EmployeeID}")
     public ResponseEntity<Void> deleteEmployee(Employee employee){
         try {
-            employeeService.deleteEmployee(employee.getID());
+            employeeService.deleteEmployee(employee.getEmployeeID());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
@@ -69,5 +69,5 @@ public class EmployeeEndpoint {
         return ResponseEntity.ok(employee);
     }
 
-    }
+}
 
