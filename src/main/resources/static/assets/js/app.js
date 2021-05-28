@@ -1,6 +1,6 @@
 //Author Nico
 
-    var serviceEndpointURL = "http://localhost:8080"
+    var serviceEndpointURL = "http://trangecino.herokuapp.com"
 
 
     function register(email, password, CompanyName, surname, familyname, callback){
@@ -51,7 +51,7 @@
             contentType: "application/json",
             url: serviceEndpointURL + "/api/Employee",
             data: JSON.stringify({
-                "surname": surname,
+                "name": surname,
                 "email": email,
                 "password": password,
                 "familyname": familyname,
@@ -74,7 +74,7 @@
             contentType: "application/json",
             url: serviceEndpointURL + "/api/HR",
             data: JSON.stringify({
-                    "surname": surname,
+                    "name": surname,
                     "email": email,
                     "password": password,
                     "familyname": familyname,
@@ -101,7 +101,7 @@
                         "employee": employee,
                         "OutOfOffice" : OutOfOffice,
                         "date": date,
-                        "projectname": projectname,
+                        "Project": projectname,
                 }),
 
                 success: function (data, textStatus, response) {
@@ -254,7 +254,7 @@
                     "HRID": HRID,
                     "email": email,
                     "password": password,
-                    "surname": surname,
+                    "name": surname,
                     "familyname": familyname
                 }),
                 success: function(data, textStatus, response){
@@ -276,7 +276,7 @@
                         "ID": ID,
                         "email": email,
                         "password": password,
-                        "surname": surname,
+                        "name": surname,
                         "familyname": familyname
                     }),
                     success: function(data, textStatus, response){
@@ -300,7 +300,7 @@
                 "password": password,
                 "CompanyName": CompanyName,
                 "surname": surname,
-                "familyname": familyname
+                "name": familyname
             }),
             success: function(data, textStatus, response){
                 callback(data);

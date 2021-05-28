@@ -23,8 +23,9 @@ public class WorkScheduleService {
 
     // create workschedule - possible if statement to be added
     public void createWorkschedule(@Valid WorkSchedule workschedule) {
-            workschedulerepository.save(workschedule);
-            workschedule.setEmployee(employeeService.getCurrentEmployee());
+        workschedule.setEmployee(employeeService.getCurrentEmployee());
+        workschedulerepository.save(workschedule);
+
     }
 
     // edit workschedule - possible if statement to be added
