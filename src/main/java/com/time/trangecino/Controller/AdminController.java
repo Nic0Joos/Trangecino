@@ -1,7 +1,5 @@
 package com.time.trangecino.Controller;
 
-import com.time.trangecino.business.service.AdminService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/Admin")
 public class AdminController {
 
-    @Autowired
-    AdminService adminService;
 
     @GetMapping
     public String getAdminView(){
