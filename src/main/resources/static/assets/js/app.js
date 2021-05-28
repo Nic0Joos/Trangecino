@@ -331,7 +331,7 @@
 
     };
 
-    function putWorkschedule(WorkscheduleID, StartMorning, Lunch, StartAfternoon, EndDay, callback ){
+    function putWorkschedule(WorkscheduleID, StartMorning, Lunch, StartAfternoon, EndDay, OutOfOffice, callback ){
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
@@ -341,7 +341,8 @@
                     "StartMorning": StartMorning,
                     "Lunch": Lunch,
                     "StartAfternoon": StartAfternoon,
-                    "EndDay": EndDay
+                    "EndDay": EndDay,
+                    "OutOfOffice": OutOfOffice
                 }),
                 success: function(data, textStatus, response){
                     callback(data);
@@ -397,6 +398,20 @@
 
                  });
              };
+    function deleteWorkschedule(WorkscheduleID, callback){
+                     $.ajax({
+                         type: "DELETE",
+                         contentType: : "application/json",
+                         url: serviceEndpointURL + "/api/Workschedule" + WorkscheduleID,
+                         success: function(data, textStatus, response){
+                                  callback(data);
+                                  },
+                         error: function(jqXHR, textStatus, errorThrown) {
+                                  console.log(jqXHR, textStatus, errorThrown);
+                         },
+
+                     });
+                 };
 
     //Copied from Andreas Martin: https://github.com/DigiPR/digipr-acrm
     function getURLParameter(name) {
