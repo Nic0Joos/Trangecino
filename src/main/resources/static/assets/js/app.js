@@ -152,11 +152,11 @@
         });
     };
 
-    function GetEmployee(EmployeeID, callback){
+    function GetEmployee(ID, callback){
             $.ajax({
                 type: "GET",
                 datatype: "json",
-                url: serviceEndpointURL + "/api/Employee" + EmployeeID,
+                url: serviceEndpointURL + "/api/Employee" + ID,
 
                 success: function(data, textStatus, response) {
                     callback(data);
@@ -286,13 +286,13 @@
 
         };
 
-    function putEmployee(EmployeeID, email, password, surname, familyname, callback ){
+    function putEmployee(ID, email, password, surname, familyname, callback ){
                 $.ajax({
                     type: "PUT",
                     contentType: "application/json",
-                    url: serviceEndpointURL + "/api/Employee/" + EmployeeID,
+                    url: serviceEndpointURL + "/api/Employee/" + ID,
                     data: JSON.stringify({
-                        "EmployeeID": EmployeeID,
+                        "ID": ID,
                         "email": email,
                         "password": password,
                         "surname": surname,
