@@ -39,7 +39,7 @@ public class WorkScheduleService {
 
     // find all Workschedules from the logged-in employee
     public List<WorkSchedule> FindAllWorkSchedule (){
-        return workschedulerepository.findByEmployeeID(employeeService.getCurrentEmployee().getEmployeeID());
+        return workschedulerepository.findByEmployeeID(employeeService.getCurrentEmployee().getID());
     }
     // find one workschedule from a specific employee
     public WorkSchedule FindOneWorkSchedule(Long WorkScheduleID) {

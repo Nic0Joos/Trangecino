@@ -15,7 +15,7 @@ public class Employee {
     //attributes
     @Id
     @GeneratedValue
-    protected Long EmployeeID;
+    protected Long ID;
     @Email
     protected String email;
     protected String password;
@@ -34,8 +34,8 @@ public class Employee {
         Workschedule = workschedule;
     }
 
-    public Long getEmployeeID() { return EmployeeID; }
-    public void setEmployeeID(Long EmployeeID) { this.EmployeeID = EmployeeID; }
+    public Long getID() { return ID; }
+    public void setID(Long ID) { this.ID = ID; }
 
     public String getEmail() {
         return email;

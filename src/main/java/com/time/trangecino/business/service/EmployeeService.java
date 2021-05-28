@@ -26,7 +26,7 @@ public class EmployeeService {
     if the email is not null than there is already a email with that input
     otherwise if the ID is null than save the employee */
     public void addEmployee(@Valid Employee employee) throws Exception {
-        if (employee.getEmployeeID() == null) {
+        if (employee.getID() == null) {
             if (employeeRepository.findByEmail(employee.getEmail()) != null) {
                 throw new Exception("Email address is already assigned");
             }
@@ -39,7 +39,7 @@ public class EmployeeService {
     if the ID is null than no employee was found
     otherwise save the employee (with the edited data) */
     public Employee editEmployee(@Valid Employee employee) throws Exception {
-        if (employee.getEmployeeID() == null) {
+        if (employee.getID() == null) {
             throw new Exception("No employee found");
         } else {
             return employeeRepository.save(employee);
