@@ -91,7 +91,7 @@
 
     <script>
         $(document).ready(function () {
-               $("#saveBtn").click(function (event) {
+               $("#saveBtn").on("click", function (event) {
                    login($('input[name=email]').val(), $('input[name=password]').val(), function(result) {
                         if(result) {
                             window.location.replace("../");
