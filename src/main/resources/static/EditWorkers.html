@@ -142,7 +142,7 @@
                     getAdmins(function(result){
                         $("AdminTable").empty();
                         $.each(result, function (i, item){
-                            $("AdminTable").append($("<tr>").append($("<td>").text(item.AdminID).append($("<td>").text(item.familyname).append($("<td>").text(item.email)
+                            $("AdminTable").append($("<tr>").append($("<td>").text(item.AdminID).append($("<td>").text(item.surname).append($("<td>").text(item.email)
                                            .append(<a href="EditAdmin.html?id= + item.AdminID"> <button class="btn btn-primary" type="button" style="background:var(--cyan);border-color: var(--info);"><strong>Edit</strong></button></a>) +
                                             "</td></tr>")
                                         )));

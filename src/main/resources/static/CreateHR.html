@@ -46,13 +46,10 @@
         <div class="row">
             <div class="col" style="margin-top: 20px;margin-bottom: 30px;">
                 <form>
-                    <p style="padding: 10px;"><strong>Name</strong></p><input class="form-control form-control-lg" name="surname" type="text" style="margin-top: 0px;margin-bottom: 20px;" placeholder="Name">
+                    <p style="padding: 10px;"><strong>Name</strong></p><input class="form-control form-control-lg" name="name" type="text" style="margin-top: 0px;margin-bottom: 20px;" placeholder="Name">
                     <p style="padding: 10px;"><strong>Email</strong></p><input class="form-control form-control-lg" name="email" type="text" style="margin-top: 0px;margin-bottom: 25px;" inputmode="email" placeholder="someone@example.ch">
                     <p style="padding: 10px;"><strong>Password</strong></p><input class="form-control form-control-lg" name="password" type="text" style="margin-top: 0px;margin-bottom: 25px;"  placeholder="password">
-                </form>
-            </div>
-            <div class="col-lg-6" style="margin-top: 20px;margin-bottom: 30px;">
-                <form>
+
                     <p style="padding: 10px;"><strong>Familyname</strong></p><input class="form-control form-control-lg" name="familyname" type="text" style="margin-bottom: 20px;" placeholder="Name">
                     <div class="col" style="margin-top: 80px;margin-bottom: 50px;"><button id="SaveBtn" class="btn btn-primary" type="button" style="width: 100px;background: var(--cyan);border-color: var(--cyan);font-size: 20px;"><strong>Save</strong></button></div>
                 </form>
@@ -94,7 +91,7 @@
     <script language="JavaScript">
         $(document).ready(function () {
            $("#saveBtn").click(function (event) {
-               PostHR($('input[name=surname]').val(), $('input[name=email]').val(), $('input[name=password]').val(),
+               PostHR($('input[name=name]').val(), $('input[name=email]').val(), $('input[name=password]').val(),
                         $('input[name=familyname]').val(), function (result) {
                                 alert("It was successful!");
                             }, function (error) {

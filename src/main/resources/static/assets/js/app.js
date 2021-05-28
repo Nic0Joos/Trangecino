@@ -45,13 +45,13 @@
             });
     };
 
-    function PostEmployee(surname, email, password, familyname){
+    function PostEmployee(name, email, password, familyname){
             $.ajax({
             type: "POST",
             contentType: "application/json",
             url: serviceEndpointURL + "/api/Employee",
             data: JSON.stringify({
-                "name": surname,
+                "name": name,
                 "email": email,
                 "password": password,
                 "familyname": familyname,
@@ -68,13 +68,13 @@
             });
     }
 
-    function PostHR(surname, email, password, familyname){
+    function PostHR(name, email, password, familyname){
             $.ajax({
             type: "POST",
             contentType: "application/json",
             url: serviceEndpointURL + "/api/HR",
             data: JSON.stringify({
-                    "name": surname,
+                    "name": name,
                     "email": email,
                     "password": password,
                     "familyname": familyname,
@@ -245,7 +245,7 @@
                     });
                 };
 
-    function putHR(HRID, email, password, surname, familyname, callback ){
+    function putHR(HRID, email, password, name, familyname, callback ){
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
@@ -254,7 +254,7 @@
                     "HRID": HRID,
                     "email": email,
                     "password": password,
-                    "name": surname,
+                    "name": name,
                     "familyname": familyname
                 }),
                 success: function(data, textStatus, response){
@@ -267,7 +267,7 @@
 
         };
 
-    function putEmployee(ID, email, password, surname, familyname, callback ){
+    function putEmployee(ID, email, password, name, familyname, callback ){
                 $.ajax({
                     type: "PUT",
                     contentType: "application/json",
@@ -276,7 +276,7 @@
                         "ID": ID,
                         "email": email,
                         "password": password,
-                        "name": surname,
+                        "name": name,
                         "familyname": familyname
                     }),
                     success: function(data, textStatus, response){
