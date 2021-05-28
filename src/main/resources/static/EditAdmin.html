@@ -108,9 +108,13 @@
 
              $("#SaveBtn").click(function (event) {
                putAdmin($('input[name=AdminID]').val(), $('input[name=email]').val(), $('input[name=password]').val(), $('input[name=companyname]').val(),
-                        $('input[name=surname]').val(), $('input[name=familyname]').val()
-                        );
-                    });
+                        $('input[name=surname]').val(), $('input[name=familyname]').val(), function(result) {
+                            console.log("successful edit");
+                        }, function(error) {
+                            alert("Something went wrong");
+                        }
+               );
+             });
 
 
         });

@@ -96,11 +96,14 @@
         $(document).ready(function () {
            $("#saveBtn").click(function (event) {
                PostHR($('input[name=surname]').val(), $('input[name=email]').val(), $('input[name=password]').val(),
-                        $('input[name=familyname]').val(),
+                        $('input[name=familyname]').val(), function (result) {
+                                alert("It was successful!");
+                            }, function (error) {
+                                alert("Something went wrong");
+                            }
                );
-            });
+           });
         });
-
     </script>
 
 </body>
